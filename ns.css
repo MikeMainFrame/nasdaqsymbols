@@ -1,0 +1,284 @@
+
+h1 {
+  font-size: 36px;
+  letter-spacing: 18px;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-family: "Black Ops One";
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: 100;
+  letter-spacing: 3px;
+  margin: 0;
+  padding: 0;
+}
+h4 {
+  font-size: 15px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+h4::before {
+  content: "\01F989 ";
+}
+h5 {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+h5::before {
+  display: inline-block;
+  vertical-align: middle;
+  content: url("https://storage.googleapis.com/camelhouse/gmMFSilhouette4.svg");
+  background-size: 32px 32px;
+  height: 32px;
+  width: 32px;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+td,
+th {
+  height: min-content;
+  border-bottom: solid 0.5px white;
+  padding: 0.5em;
+  color: #fff;
+  vertical-align: middle;
+  padding: 0.5vw;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+th {
+  text-align: right;  
+  padding: 0.5em;
+  color: #ffffff80;
+}
+
+p {
+  font-weight: 100;
+  font-size: 2vw;
+  text-align: center;
+  white-space: pre-line;
+  font-family: "IBM Plex Sans";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "IBM Sans Plex";
+}
+
+div.scrollmenu {
+  background-color: #000;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu img {
+  display: inline-block;
+  width: 256px;
+  color: white;
+  text-align: center;
+  padding: 1vw;
+  text-decoration: none;
+}
+
+body {
+  font-size: 100%;
+  color: white;
+  font-family: "IBM Plex Sans";
+  background-color: #111;
+  background-image: url(https://storage.googleapis.com/camelhouse/aegypt.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  object-fit: contain;
+  overflow-y: auto;
+  margin: 0;
+  padding: 2vw;
+}
+
+h4 {
+  margin: 8px 0;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  text-align: left;
+  font-weight: 300;
+}
+
+table {
+  border-collapse: collapse;
+}
+b {
+  border-bottom: solid 2px #fff;
+  font-weight: 700;
+}
+
+input,
+button {
+  font-family: "IBM Plex Sans";
+  border-radius: 10px;
+}
+input {
+  color: white;
+  font-size: 16px;
+  background: #ff0aaa80;
+  border: none;
+  padding: 16px;
+  margin: 0;
+}
+button {
+  color: white;
+  font-size: 14px;
+  letter-spacing: 1.25px;
+  border: none;
+  background: #6200ee;
+  padding: 11px;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+p {
+  margin: 0 1vw 1vw 1vw;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 23px;
+  min-width: 375px;
+  font-family: "IBM Plex Sans";
+}
+span {
+  font-size: 11px;
+  width: 11vw;
+  color: #fff;
+  padding: 0 1vw;
+}
+.sColumn {
+  float: left;
+  width: 40%;
+  white-space: pre-line;
+}
+pre {
+  clear: both;
+  margin: 3%;
+  white-space: pre-line;
+}
+td,
+th {
+  font-size: 14px;
+}
+th {
+  text-align: right;
+}
+
+  td,
+  th {
+    border: solid 0.5px #ffffff40;
+    text-align: center;
+    vertical-align: top;
+  }
+
+  th {
+    background-color: #ffffff20;
+  }
+
+  h1 {
+    font-family: inherit;
+    font-size: 2vw;
+  }
+
+  #map {
+    height: 256px;
+    width: 256px;
+    border-radius: 3%;
+  }
+
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  h3 {
+    line-height:28px
+  }
+    div {
+      border: none;
+      float: left;
+    }
+  
+    p {
+      min-width: auto;
+  
+    }
+  
+    #map {
+      height: 300px;
+      width: 300px;
+      border-radius: 3%;
+      opacity: 0.5;
+    }
+  
+    .wrapper {
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      flex-flow: row wrap;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+  
+    .wrapper>* {
+      flex: 1 100%;
+    }
+  
+    @media all and (min-width: 600px) {
+  
+      /* We tell both sidebars to share a row */
+      .fItems {
+        flex: 1 1 0px;
+      }
+    }
+  
+    /* Large screens */
+    @media all and (min-width: 800px) {
+  
+      .main {
+        flex: 2 0px;
+      }
+  
+      .column1 {
+        order: 1;
+        width: 20%;
+        height: 100%;
+        min-width: 300px;
+      }
+  
+      .main {
+        order: 2;
+        width: auto;
+        text-align: center;
+      }
+  
+      .column2 {
+        order: 3;
+        width: 20%;
+        
+        height: 100%;
+        min-width: 300px;
+        text-align: center;
+      }
+  
+  
+    }
