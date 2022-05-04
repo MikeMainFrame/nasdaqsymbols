@@ -219,8 +219,6 @@ A.get( "/yahoo/chart/history/code/:code", ( request, response ) => {
 
       var collection = [];
 
-    
-
       nasdaq.data.chart.result[ 0 ].timestamp.map( ( T, ix ) => {
         var slot = {};
         slot.timestamp = T;
@@ -237,7 +235,7 @@ A.get( "/yahoo/chart/history/code/:code", ( request, response ) => {
       response.send( JSON.stringify( collection ) );
     } )
     .catch( E => {
-      console.log("fejl: " +  E )
+      console.log( E )
     } );
 
 } )
