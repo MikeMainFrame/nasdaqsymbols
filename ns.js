@@ -2,9 +2,7 @@
 const express = require( "express" );
 const A = express();
 const axios = require( "axios" ).default;
-const {
-  Storage
-} = require( '@google-cloud/storage' );
+const {   Storage } = require( '@google-cloud/storage' );
 const storage = new Storage();
 var template = 'Ø';
 var splits = [];
@@ -12,12 +10,12 @@ var nasdaq = "";
 var chart = "";
 var specs = {};
 
+// is this in github ?
 
 A.use( express.json() );
 
-A.use( "/", express.static( "public", {
-  index: "nsMain.html"
-} ) );
+A.use( "/", express.static( "public", {   index: "nsMain.html" } ) );
+
 A.listen( process.env.PORT || 3000, () => {
   console.log( "all ears ear ea r, Press Ctrl+C to quit." );
 } );
@@ -219,6 +217,8 @@ A.get( "/yahoo/chart/history/code/:code", ( request, response ) => {
 
       var collection = [];
 
+    
+
       nasdaq.data.chart.result[ 0 ].timestamp.map( ( T, ix ) => {
         var slot = {};
         slot.timestamp = T;
@@ -235,7 +235,7 @@ A.get( "/yahoo/chart/history/code/:code", ( request, response ) => {
       response.send( JSON.stringify( collection ) );
     } )
     .catch( E => {
-      console.log( E )
+      console.log("fejl: " +  E )
     } );
 
 } )
