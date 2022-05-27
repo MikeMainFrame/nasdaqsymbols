@@ -8,7 +8,6 @@ var xhr = new XMLHttpRequest(),
   symbol = window.location.href.split( "?symbol=" )[ 1 ];  
   date = window.location.href.split( "?date=" )[ 1 ];
 
-document.getElementById( "now" ).textContent = new Date();
 
 //summaryData();
 
