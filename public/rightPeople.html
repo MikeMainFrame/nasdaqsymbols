@@ -1,0 +1,505 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|Black+Ops+One|Open+Sans" rel="stylesheet">
+
+<head>
+  <style>
+    @media all {
+      div {
+        border: none
+      }
+
+      body {
+        font-size: 14px;
+        color: white;
+        font-family: 'IBM Plex Mono';
+color: white;
+    background-color: #111;
+    background-image: linear-gradient(#00000080, #00000080),
+    url(https://eoimages.gsfc.nasa.gov/images/imagerecords/147000/147198/valsequillo_oli_20209_lrg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    object-fit: contain;
+    overflow-y: auto;
+        margin: 0;
+        padding: 0.66%;
+      }
+
+      p {
+        white-space: pre-line;
+        font-size: smaller;
+        min-width: 600px;
+      }
+
+      .column25l {
+        width: 256px;
+        clear: both;
+        float: left;
+
+      }
+
+      .column25 {
+        width: 256px;
+        clear: both;
+        float: left;
+
+        text-align: right;
+      }
+
+      .column75 {
+        width: 73%;
+        float: left;
+      }
+
+      .w100 {
+        width: 100%;
+        float: left;
+      }
+
+      img {
+        width: 33%;
+        margin-left: 33%;
+        margin-top: 10%;
+        filter: grayscale(1) contrast(1);
+      }
+
+      .noir {
+        color: #000;
+      }
+
+
+
+      h2 {
+        letter-spacing: 2;
+        margin: 0;
+        padding: 0;
+        clear: both;
+        font-size: smaller;
+        margin-right: 10px;
+      }
+
+      h5 {
+        letter-spacing: 3;
+        margin: 0;
+      }
+
+      h1 {
+        font-family: 'Open Sans';
+        font-size: 26px;
+        letter-spacing: 1px;
+      }
+    }
+
+    @media print {
+      body {
+        width: 210mm;
+        height: 297mm;
+
+        font-size: 9pt;
+        line-height: 13pt;
+
+        background-attachment: fixed;
+    background-size: cover;
+    object-fit: contain;
+    overflow-y: auto;
+    
+    object-fit:fill;
+    overflow-y: auto;
+      }
+
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 300;
+        color: #fff;
+      }
+
+      img {
+        width: 40%;
+        margin-left: 30%;
+        margin-top: 10%;
+        filter: none;
+      }
+
+    }
+  </style>
+</head>
+
+
+<body>
+  <div class="w100">
+    <div style="float: left;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="256px" viewBox="0 0 320 320">
+        <defs>
+          <pattern id="cross" patternUnits="userSpaceOnUse" width="4" height="4">
+            <path d="M0,4 L4,0 M4,4 L0,0" stroke="#ffffff80" stroke-width="1"></path>
+          </pattern>
+          <radialGradient id="radial">
+            <stop offset="73%" stop-color="rgba(255,255,255,0)"></stop>
+            <stop offset="74%" stop-color="rgba(255,255,255,0.1)"></stop>
+            <stop offset="100%" stop-color="rgba(255,255,255,0.2)"></stop>
+          </radialGradient>
+        </defs>
+
+        <g transform="translate(34,34)">
+          <path fill="#ff800000" id="zoutside" d="M 5.1272 41.9635 A 150 150 0 0 0 250.8728 214.0364">
+            <!--animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 128 128"
+            to="360 128 128" dur="120s" repeatCount="indefinite"></!--animateTransform-->
+          </path>
+          <text font-size="11" fill="#fff" font-weight="100" text-anchor="start" font-family="'IBM Sans Mono', serif"
+            letter-spacing="1">
+            <textPath href="#zoutside">
+              ☎ +45 53588277 ✉ miketriticum@gmail.com
+            </textPath>
+          </text>
+
+          <path id="ztop" fill="none" d="M 28 128 A 100 100 0 0 1 228 128"></path>
+          <path id="zbottom" fill="none" d="M 13 128 A 115 115 0 0 0 243 128"></path>
+          <circle r="6" fill="none" stroke="#fff" stroke-width=".5">
+            <animateMotion dur="240s" repeatCount="indefinite" path="M 125.6613 -5.9795 A 134 134 0 1 0 128 -6 z">
+            </animateMotion>
+          </circle>
+
+          <circle r="12" fill="#ffffff80" stroke="none">
+            <animateMotion dur="360s" repeatCount="indefinite" path="M 125.3821 -21.9771 A 148 148 0 1 0 128 -22 z">
+            </animateMotion>
+          </circle>
+
+          <circle cx="128" cy="128" r="126" fill="url(#radial)" stroke="none" stroke-width="1"></circle>
+          <circle cx="128" cy="128" r="92" fill="none" stroke="#ffffff80"></circle>
+          <circle cx="128" cy="128" r="92" fill="none" stroke="#ffffffa0" stroke-width="4" stroke-dasharray="4 4">
+          </circle>
+          <text font-size="24" fill="#fff" text-anchor="middle" font-family="'Black Ops One', serif"
+            letter-spacing="14">
+            <textPath startOffset="50%" href="#ztop">
+              TRITICUM
+            </textPath>
+          </text>
+          <text font-size="13" fill="#fff" font-weight="100" text-anchor="middle" font-family="IBM Plex Mono"
+            letter-spacing="2">
+            <textPath startOffset="50%" href="#zbottom"
+              onmouseover="this.textContent = ' ☎ +45 53588277 ✉ miketriticum@gmail.com'">
+              FIDELITAS 🦉 FORTITUDE 🐺 INTEGRITAS
+            </textPath>
+          </text>
+
+          <g transform="scale(0.5),translate(168,128)">
+            <path
+              d="M158.339,68.332l-38.012,38.013c-1.654-3.222-3.822-6.247-6.518-8.942c-2.664-2.664-5.678-4.848-8.933-6.526l38.011-38.011           c2.86,2.232,5.615,4.632,8.221,7.238C153.701,62.696,156.103,65.454,158.339,68.332z           M73.816,137.395           c3.925,3.925,9.143,6.086,14.693,6.086c5.55,0,10.768-2.162,14.692-6.086c8.102-8.102,8.102-21.284,0-29.386           c-3.924-3.924-9.143-6.086-14.692-6.086c-5.551,0-10.77,2.162-14.694,6.086C65.715,116.111,65.715,129.294,73.816,137.395z          M210.116,114.561c-0.008-0.007-0.077-0.077-0.084-0.084c-2.236-2.236-5.21-3.467-8.372-3.467c-3.163,0-6.137,1.232-8.372,3.468           l-9.503,9.503l-0.132-0.005l24.608-57.434c1.208-2.818,0.578-6.088-1.59-8.257l-8.536-8.536l-73.886,73.887           c-0.229,8.848-3.702,17.628-10.44,24.366c-6.759,6.758-15.743,10.48-25.3,10.48c-9.558,0-18.542-3.722-25.301-10.48           c-13.949-13.95-13.949-36.648,0-50.599c6.542-6.541,15.17-10.227,24.384-10.457l73.869-73.869l-8.536-8.536           c-2.167-2.167-5.435-2.797-8.257-1.59L62.994,37.946c-7.599,2.284-14.888,5.58-21.663,9.855c-1.929,1.217-3.198,3.244-3.452,5.51           c-0.2,1.794,0.254,3.583,1.252,5.05L24.168,73.324c-1.466-0.997-3.257-1.451-5.049-1.251c-2.267,0.253-4.294,1.523-5.511,3.451           C3.064,92.233-1.597,112.311,0.485,132.059c2.112,20.051,11.143,38.959,25.425,53.242c16.712,16.711,38.932,25.915,62.568,25.916           c0.002,0,0.001,0,0.003,0c16.769,0,33.094-4.708,47.207-13.613c1.929-1.217,3.198-3.245,3.452-5.511           c0.2-1.793-0.255-3.582-1.252-5.049l14.962-14.963c1.467,0.998,3.254,1.455,5.051,1.252c2.266-0.253,4.293-1.523,5.51-3.452           c3.652-5.788,6.583-11.985,8.784-18.429l13.854,0.497c0.091,0.003,0.183,0.005,0.273,0.005c2.092,0,3.991-0.868,5.357-2.266           c0.041-0.039,0.085-0.073,0.125-0.113l18.29-18.291c2.236-2.236,3.469-5.21,3.469-8.373S212.33,116.775,210.116,114.561z"
+              fill="none" stroke="#fff" stroke-width="1">
+              <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 89 122"
+                to="360 89 122" dur="540s" repeatCount="indefinite"></animateTransform>
+            </path>
+          </g>
+
+      </svg>
+    </div>
+    <div style="margin-top: 50px;width: auto;float:left;text-align: center;">
+      <h6 style="color: #fff; font-size: 19px; letter-spacing: 9px; margin: 1vw 0; text-transform: uppercase;">
+        MICHAEL 🦉 KENNETH 🐺 RASCH
+      </h6>
+      <h3 style="margin: 1vw 0;font-size: 12px;letter-spacing: 2px; color: #fff; font-weight: 100;">
+       Tue Jun 07 2022 11:14:19 GMT+0200 (Central European Summer Time)
+      </h3>
+      <h1 style="font-family: 'Open Sans'; font-size: 26px ">
+        Consultant Task - COBOL Developer, Remote (01.06.2022)
+      </h1>
+    </div>
+    <div style="float:right;width: 256px; height: 256px; ;">
+      <img style="width: 100%;margin: 0;padding: 0; margin-top: 50px;"
+        src="https://storage.googleapis.com/triticum/PHOTOS/rp" />
+    </div>
+    <div class="column25l">
+
+      <img id="ibm" src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg">
+      <img id="microsoft" src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg">
+      <img id="google" src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg">
+      <!--img id="stackoverflow" src="https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-logo.svg"-->
+      <img id="linux" src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg">
+      <img id="mysql" src="https://labs.mysql.com/common/logos/mysql-logo.svg?v2">
+      <img id="npm" src="https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg">
+      <img id="mikey" style="border-radius: 50%; width: 50%; margin-left: 25%;"
+        src="https://storage.googleapis.com/triticum/PHOTOS/meX.jpg">
+
+    </div>
+    <div class="column75">
+
+
+      <p style="
+color: #fff;
+font-size: 1em;
+font-weight: 300;
+padding: 0;
+text-align: left;
+white-space: pre-line;
+float: left;
+
+">Dear Right People,
+
+        I would like to apply for your job Consultant Task – COBOL Developer, Remote (01.06.2022)
+
+        I have a long trackrecord with mainframes and have completed large projects with success.
+        
+        I have done a lot of COBOL during pre 2000, Batch, conversions, online, bmp etc etc.
+
+        And in 2017 i i happend again - though this was machine generated COBOL.
+        
+        I apply for this, because I think there is a lot of exciting stuff, going on in Norway.
+
+        Today I do cloud - Google Cloud. I develop microsites, using open source paradigm.
+
+        Do not hesitate to contact me, if you find my profile facinating.
+
+        I promise you will get a very competetive human resource ...
+        
+        Regards Mikey,
+
+        &#x2709; mikeyKennethRasch &#x260E; +45 53588277 &#x1f310; 55° 57' 28" N 12° 31' 24" E
+      </p>
+    </div>
+  </div>
+
+  <div class="column25">&nbsp;</div>
+  <div class="column75">
+    <h1>
+      CURRICULUM
+    </h1>
+  </div>
+
+  </div>
+
+  <div class="w100">
+    <div class="column25">
+      <h2>
+        2016 – present
+      </h2>
+    </div>
+
+    <div class="column75">
+
+      <h5>
+        TRITICUM ARCHIVES
+      </h5>
+      <p>Business Developer
+        TRITICUM is the name of my freelance business.
+        I develop SPA' and other cloud related activities.
+        Google App Engine, Cloud Functions, Storage, Sendgrid Mail etc,
+        using primarely nodejs and PHP, to serve and process.
+
+        I use Google as my prime cloud service provider, secondly AWS.
+        Incorperated services: Google API' OAuth, Calendar, GMail, GMaps.
+
+        Node.js ®, PHP, TypeScript, NPM, AWS S2, GCP Storage, MySQL, React, Angular and SVG
+      </p>
+    </div>
+  </div>
+
+
+  <div class="w100">
+    <div class="column25">
+      <h2>
+        2020
+      </h2>
+    </div>
+
+    <div class="column75">
+
+      <h5>
+        AMBITION
+      </h5>
+      <p>Consultant
+        Advertising bureau, maturing games, for entertainment.
+        My role was to troubleshot the entire complex of games written in PHP, Javascript, AWS
+        Setting up nodejs for analysing and maesuring metrics during the game - typically football match
+        - to separate several asynchronueus source of data.
+        This was real time games, feed by external API - RAPIDAPI.
+
+        Node.js ®, PHP, NPM, AWS S2, GCP Storage, SVG, Bitbucket
+      </p>
+    </div>
+  </div>
+
+
+
+  <div class="w100">
+    <div class="column25">
+      <h2>
+        2018
+      </h2>
+    </div>
+    <div class="column75">
+      <h5>
+        KEYWEST
+      </h5>
+      <p>Consultant
+        Small clothing company, very intimate and personal.
+        Shopify design changes.
+        API between Economics and Shopify.
+        shopify clean up activities - refactor.
+
+        Javascript, PHP, SVG, Shopify, E-conomics API
+      </p>
+    </div>
+  </div>
+
+
+  <div class="w100">
+    <div class="column25">
+      <h2>
+        2017
+      </h2>
+    </div>
+    <div class="column75">
+      <h5>
+        VP SECURITIES
+      </h5>
+      <p>Consultant
+        2018 implementation of multicurrency processing, preparing for
+        scandinavian market. T2S platform was delveloped using legacy source code EGL,
+        a mature product from IBM, that have been around for three decades.
+        This installation has a legacy platform. VP is very conservative in their
+        digital strategy and is more management than innovative.
+        I write this, because the method and execution, was very old school and
+        any well meant suggestion, was rejected.
+
+        EGL Programming and testing.
+
+        DB2 SQL, EGL, JIRA, JAVA og WScript
+      </p>
+
+    </div>
+  </div>
+
+
+  <div class="w100">
+    <div class="column25">
+      <h2>
+        2000 – 2012
+      </h2>
+    </div>
+    <div class="column75">
+      <h5>
+        DANSKE BANK
+      </h5>
+      <p>Consultant
+        Have served DB 4 times in 12 yr.
+        Initially, we developed a system for asset handling.
+        Next was internal systems, monthly reporting to NAVISION,
+        aggregate data from various sources and quality.
+        3rd time, internal deployment system programming REXX.
+        4th maintenance of portfolio small customers.
+        Hybrid development of creditcard application.
+
+        MVS, Windows, IIS, VB6, C#, PL1, COBOL, CICS, DB2, JCL, REXX.
+      </p>
+    </div>
+  </div>
+
+
+  <div class="w100">
+    <div class="column25">
+      <h2>
+        2009
+      </h2>
+    </div>
+    <div class="column75">
+      <h5>
+        AP PENSION
+      </h5>
+      <p>Developer
+        Very complex installation, doing life Insurrance business,
+        BS2000, MVS, Oracle, Windows
+        Refactor legacy code.
+        Employment (life insurance) using Oracle Databases and OO techniques.
+
+        COBOL, MVS, Windows
+      </p>
+    </div>
+  </div>
+
+
+  <div class="w100">
+    <div class="column25">
+      <h2>
+        2005 – 2007
+      </h2>
+    </div>
+    <div class="column75">
+      <h5>
+        KMD A/S
+      </h5>
+      <p>Consultant,
+        Working as developer in Social & Pensions Systems.
+        a cross system environment, where dual print systemss was made.
+        XML Parser developed and XSLt schemas for tranforming data into HTML word documents
+
+        XML, XSLt, XMLSOAP, PL1, DB2, javascript, VBScript, FTP, JCL
+      </p>
+    </div>
+  </div>
+
+  <div class="w100">
+    <div class="column25">
+      <h2>
+        2004
+      </h2>
+    </div>
+    <div class="column75">
+      <h5>
+        SEB PENSION
+      </h5>
+      <p>Developer,
+        Life insurrance business.
+        They had bought a solution at CODAN, but not the source code.
+        The tasks in hand, was to implement paragraph 42, which
+        allows you to move your account at will.
+        Proprietarian praktice in law mandatory savings, was finally
+        altered.
+        They were focused on getting Novo Nordisk, as customer, which
+        took up a lot of resources and paragraph 42 was ignored.
+        Typically danish culture, where ownership of personal savings, is
+        politicised.
+
+        MVS, COBOL, PL1, javascript, JAVA
+      </p>
+    </div>
+  </div>
+
+  <div class="w100">
+    <div class="column25">
+      <h2>
+        1985 - 2000
+      </h2>
+    </div>
+
+    <div class="column75">
+
+      <h5>
+        Goverment, Reassurance and Consulting
+      </h5>
+      <p>Programmer
+        I enteered the industry, at the largest installation: skat - Goverment
+        I this period I also did small installation, with high-end business Reassurance - CRI
+        SDC datacenter - doing 1st edition browser trading
+        Alm Brand conversion fram SIEMENS 2000 - to IBM zOs.
+        IBM fort lauterdale Florida.
+        IBM Lyngby
+        Most of programming was done using COBOL, PLI and REXX.
+
+        I master REXX and ISPF, making system programming my second priority.
+        This gave me master respomsibility within the installation.
+
+        MVS, COBOL, PL1, REXX, TSO/E DB2, CICS, IMS, ISPF, Data Dictionary etc etc
+
+      </p>
+    </div>
+  </div>
+
+
+
+</body>

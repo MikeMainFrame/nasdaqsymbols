@@ -10,7 +10,7 @@
 
 <body style="
 color: white;
-    font-family: 'Roboto';
+font-family: 'Roboto';
     background-color: #111;
     background-image: linear-gradient(#00000080, #00000080),
     url(https://eoimages.gsfc.nasa.gov/images/imagerecords/147000/147198/valsequillo_oli_20209_lrg.jpg);
@@ -21,7 +21,6 @@ color: white;
     margin: 0;
     padding: 0;
     font-size: 15px;
-    line-height: 160%;
     width: 100%;" onload="znow.textContent = new Date()">
 
   <div style="position: fixed; width: 66.66%; left: 16.66%; top: 16.66%">
@@ -100,47 +99,44 @@ color: white;
     <h2>
       🕤 NASDAQ 🐮 STOCK EXCHANGE 🐻 RAPID API 🕓
     </h2>
-    <h1 id="longName">
+    <h1 id="zlongName">
       ALPHABET INC
     </h1>
   </div>
 
   <div class="ns-column">
-    <p id="summary">
+    <p id="zSummary">
     </p>
   </div>
 
 
 
   <div class="ns-column">
-  <svg xmlns="http://www.w3.org/2000/svg" id="zchart" style="width:100%" viewBox="0 0 360 360">
-    <circle cy="180" cx="180" r="150" fill="none" stroke="#fff" stroke-width="0.5" />
-    <text x="180" y="280" id="lowDisplay" text-anchor="middle" fill="#fff" font-weight="100"
-      font-size="14"></text>low</text>
-    <text x="180" y="80" id="highDisplay" text-anchor="middle" fill="#fff" font-weight="100"
-      font-size="14"></text>high</text>
-    <text x="80" y="180" id="openDisplay" text-anchor="middle" fill="#fff" font-weight="100" font-size="14">open</text>
-    <text x="180" y="110" id="volumeDisplay" text-anchor="middle" fill="#fff" font-weight="100"
-      font-size="14">volume</text>
-    <text x="280" y="180" id="closeDisplay" text-anchor="middle" fill="#fff" font-weight="100" font-size="14">close
-    </text>
-    <text x="300" y="180" id="redGreen" fill="#fff" stroke-width="0.5" stroke="#fff">➽</text>
-    <text x="180" y="180" id="currentPrice" text-anchor="middle" font-weight="100" font-size="28" fill="#fff"
-      stroke="none">0000</text>
-    <text x="180" y="210" id="timeDisplay" text-anchor="middle" fill="#fff" font-weight="100"
-      font-size="8"></text>time</text>
-    <text x="0" y="10" text-anchor="start" fill="#fff" font-weight="100" font-size="8">24 hour display, 5
-      minutte interval</text>
-  </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" id="zchart" style="width:100%" viewBox="0 0 360 360">
+      <circle cy="180" cx="180" r="150" fill="none" stroke="#fff" stroke-width="0.5" />
+      <text x="180" y="280" id="lowDisplay" text-anchor="middle" fill="#fff" font-weight="100"
+        font-size="14"></text>low</text>
+      <text x="180" y="80" id="highDisplay" text-anchor="middle" fill="#fff" font-weight="100"
+        font-size="14"></text>high</text>
+      <text x="80" y="180" id="openDisplay" text-anchor="middle" fill="#fff" font-weight="100"
+        font-size="14">open</text>
+      <text x="180" y="110" id="volumeDisplay" text-anchor="middle" fill="#fff" font-weight="100"
+        font-size="14">volume</text>
+      <text x="280" y="180" id="closeDisplay" text-anchor="middle" fill="#fff" font-weight="100" font-size="14">close
+      </text>
+      <text x="300" y="180" id="redGreen" fill="#fff" stroke-width="0.5" stroke="#fff">➽</text>
+      <text x="180" y="180" id="currentPrice" text-anchor="middle" font-weight="100" font-size="28" fill="#fff"
+        stroke="none">0000</text>
+      <text x="180" y="210" id="timeDisplay" text-anchor="middle" fill="#fff" font-weight="100"
+        font-size="8"></text>time</text>
+      <text x="0" y="10" text-anchor="start" fill="#fff" font-weight="100" font-size="8">
+        12 hour display, 5 minutte interval</text>
+    </svg>
 
-</div>
-  <div class="ns-column">
 
-    <div class="ns-paragraph">
-      <h4 class="ns-h4">
-        H4
-      </h4>
-      <div class="ns-declare-content">
+    <div class="ns-row ns-head-line">
+
+      <div class=ns-declare_content">
         <div class="ns-declare">
           <svg width="24px" height="24px" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -148,7 +144,7 @@ color: white;
               fill="#fff"></path>
           </svg>
         </div>
-        <div class="ns-content" id="symbol">
+        <div class="ns-content" id="zsymbol">
           xxx
         </div>
       </div>
@@ -159,15 +155,15 @@ color: white;
             <path d="M0 0h24v24H0z" fill="none" />
             <path
               d="M12 12c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm0-10c-4.2 0-8 3.22-8 8.2 0 3.32 2.67 7.25 8 11.8 5.33-4.55 8-8.48 8-11.8C20 5.22 16.2 2 12 2z" />
-          </svg>
+          </svg>  
         </div>
 
         <div class="ns-content">
-          <span id="address1">1600 Amphitheatre Parkway</span>
+          <span id="zaddress1">1600 Amphitheatre Parkway</span>
           <br>
-          <span id="city">Mountain View</span>,<span id="state">CA</span><span id="zip"> 94043</span>
+          <span id="zcity">Mountain View</span>,<span id="zfstate">CA</span><span id="zip"> 94043</span>
           <br>
-          <span id="country">United States</span>
+          <span id="zcountry">United States</span>
         </div>
       </div>
 
@@ -182,7 +178,7 @@ color: white;
           </svg>
         </div>
         <div class="ns-content">
-          <span id="fullTimeEmployees"></span>
+          <span id="zfullTimeEmployees"></span>
         </div>
       </div>
 
@@ -194,8 +190,8 @@ color: white;
           </svg>
         </div>
         <div class="ns-content">
-          <span id="currency"></span>
-          <span id="mCap"></span>
+          <span id="zcurrency"></span>
+          <span id="zmCap"></span>
         </div>
       </div>
 
@@ -216,9 +212,9 @@ color: white;
         </div>
         <div class="ns-content">
           <br>
-          <span id="sector"></span>
+          <span id="zsector"></span>
           <br>
-          <span id="industry"></span>
+          <span id="zindustry"></span>
         </div>
       </div>
 
@@ -226,19 +222,19 @@ color: white;
         <div class="ns-declare">
           EBITDA
         </div>
-        <div class="ns-content" id="ebitda">
+        <div class="ns-content" id="zebitda">
           ebitda
         </div>
 
       </div>
 
-      <div id="map"></div>
+      <div id="zmap"></div>
     </div>
   </div>
 
 
 </body>
 <script async
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMl9hHglNUhPfbDyDsEuDwU0O3JYp2aBg&callback=map1&map_ids=dbb06a73c56861a2"></script>
-<script src="ns.js"></script>
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMl9hHglNUhPfbDyDsEuDwU0O3JYp2aBg&callback=googleMap&map_ids=dbb06a73c56861a2"></script>
+<script src="nsClient.js"></script>
 <html />
