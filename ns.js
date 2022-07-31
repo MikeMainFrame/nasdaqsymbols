@@ -3,14 +3,9 @@ const express = require('express')
 const A = express()
 const axios = require('axios').default
 const { Storage } = require('@google-cloud/storage')
-const { exists } = require('fs')
-const { exit } = require('process')
 const storage = new Storage()
 var template = 'Ø'
 var splits = []
-var nasdaq = ""
-var chart = ''
-var specs = {}
 
 // is this in github ?
 
@@ -31,14 +26,12 @@ A.get('/yahoo/summary/code/:code', async (request, response) => {
       'x-rapidapi-key': process.env.YAHOO,
       'x-rapidapi-host': 'apidojo-yahoo-finance-v1.p.rapidapi.com',
     },
-  }
-
-  )
+  })
 
   var specs = {}
 
   specs.longName = nasdaq.data.price['longName']
-  specs.longBusinessSummary = nasdaq.data.summaryProfile['longBusinessSummary']
+  specs.longBusinessSummary = nasdaq.data.summaryProfile['longBusinessSummary'].split('.').join('.<br>')
   specs.fullTimeEmployees = nasdaq.data.summaryProfile['fullTimeEmployees']
   specs.address1 = nasdaq.data.summaryProfile['address1']
   specs.currency = nasdaq.data.earnings['financialCurrency']
@@ -69,14 +62,22 @@ A.get('/yahoo/financial/code/:code', async (request, response) => {
     }
   })
 
-  response.type('json')
-  response.send(JSON.stringify(nasdaq.data.price, null, 2))
+  splits.push(trWrap(thWrap("Source Name") + tdWrap(nasdaq.data.price.quoteSourceName)))
+  splits.push(trWrap(thWrap("Regular Market Day High:") + tdWrap(nasdaq.data.price.regularMarketDayHigh.fmt)))
+  splits.push(trWrap(thWrap("Regular Market Open Price:") + tdWrap(nasdaq.data.price.regularMarketOpen.fmt)))
+  splits.push(trWrap(thWrap("Regular Market Hours:") + tdWrap(new Date(nasdaq.data.price.regularMarketTime * 1e3))))
+
+
+
+response.type('html')
+response.send(tableWrap(splits.join(" ")))
+
 })
 
 
 A.get('/yahoo/chart/code/:code', async (request, response) => {
 
-  const nasdaq = await axios.get('https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-chart',  {
+  const nasdaq = await axios.get('https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-chart', {
     params: {
       interval: '5m',
       symbol: request.params.code,
@@ -94,11 +95,11 @@ A.get('/yahoo/chart/code/:code', async (request, response) => {
     var slot = {}
     slot.timestamp = T
     slot.dateISO = new Date(slot.timestamp * 1e3).toISOString()
-    slot.close = parseInt( nasdaq.data.chart.result[0].indicators?.quote[0].close[ix] )
-    slot.volume = parseInt( nasdaq.data.chart.result[0].indicators?.quote[0].volume[ix] )
-    slot.low = parseInt( nasdaq.data.chart.result[0].indicators?.quote[0].low[ix] )
-    slot.high = parseInt( nasdaq.data.chart.result[0].indicators?.quote[0].high[ix] )
-    slot.open = parseInt( nasdaq.data.chart.result[0].indicators?.quote[0].open[ix] )
+    slot.close = fixed99(nasdaq.data.chart.result[0].indicators?.quote[0].close[ix])
+    slot.volume = fixed99(nasdaq.data.chart.result[0].indicators?.quote[0].volume[ix])
+    slot.low = fixed99(nasdaq.data.chart.result[0].indicators?.quote[0].low[ix])
+    slot.high = fixed99(nasdaq.data.chart.result[0].indicators?.quote[0].high[ix])
+    slot.open = fixed99(nasdaq.data.chart.result[0].indicators?.quote[0].open[ix])
 
     collection.push(slot)
   })
@@ -137,11 +138,11 @@ A.get('/yahoo/chart/history/code/:code', async (request, response) => {
     var slot = {}
     slot.timestamp = T
     slot.dateISO = new Date(T * 1e3).toISOString()
-    slot.close = parseInt(nasdaq.data.chart.result[0].close[ix])
-    slot.volume = parseInt(nasdaq.data.chart.result[0].volume[ix])
-    slot.low = parseInt(nasdaq.data.chart.result[0].low[ix])
-    slot.high = parseInt(nasdaq.data.chart.result[0].high[ix])
-    slot.open = parseInt(nasdaq.data.chart.result[0].open[ix])
+    slot.close = nasdaq.data.chart.result[0].close[ix]
+    slot.volume = nasdaq.data.chart.result[0].volume[ix]
+    slot.low = nasdaq.data.chart.result[0].low[ix]
+    slot.high = nasdaq.data.chart.result[0].high[ix]
+    slot.open = nasdaq.data.chart.result[0].open[ix]
 
     collection.push(slot)
   })
@@ -153,7 +154,8 @@ A.get('/yahoo/chart/history/code/:code', async (request, response) => {
 
 A.get('/yahoo/holders/code/:code', async (request, response) => {
 
-  const template = await getTemplate('ns.html')
+
+  //const template = await getTemplate('ns.html')
 
   const nasdaq = await axios.get('https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-holders',
     {
@@ -167,47 +169,58 @@ A.get('/yahoo/holders/code/:code', async (request, response) => {
       },
     }
   )
-
-  splits = template.split('##') // template is split in head body and footer - we pump up body  i.e. splits[1]
-
+  //var splits = template.split('##'), W = {};
   var W = {}
+  splits[1] = trWrap(thWrap('who') + thWrap('what') + thWrap('when') + thWrap('value'));
 
-  for ( var ix = 0; ix < nasdaq.data?.insiderTransactions.transactions.length;  ix++ ) {
-    W = nasdaq.data.insiderTransactions.transactions[ix]
-    if ('filerName' in W) splits[1] = splits[1] + 'name:' + W.filerName
+  for (var ix = 0; ix < nasdaq.data?.insiderTransactions.transactions.length; ix++) {
+    W = nasdaq.data?.insiderTransactions.transactions[ix] || {}
+    if ('filerName' in W) splits[1] = splits[1]
+      + trWrap(
+        tdWrap(W.filerName)
+        + tdWrap(W.transactionText)
+        + tdWrap(W.startDate.fmt)
+        + tdWrap(W.shares.fmt)
+      )
   }
+  splits[1] = tableWrap(splits[1])
   response.type('html')
-  response.send(splits.join(''))
+  response.send(splits[1])
+  //response.send(splits.join(''))
 })
+
 
 async function getTemplate(what) {
 
-  const nasdaqTemplate = storage.bucket('nasdaqcomponents').file( what )
+  const nasdaqTemplate = storage.bucket('nasdaqcomponents').file(what)
 
   var data = [], aggregate = ''
 
   aggregate = nasdaqTemplate.createReadStream()
-  aggregate.on('data', ( fragment ) => { data.push(fragment) })
-  
-  return new Promise( ( resolve, reject ) => {
+  aggregate.on('data', (fragment) => { data.push(fragment) })
+
+  return new Promise((resolve, reject) => {
     aggregate.on('end', () => { template = Buffer.concat(data).toString('utf8'); resolve(template) })
-    aggregate.on('error', ( E ) => reject( E ))
+    aggregate.on('error', (E) => reject(E))
   })
 
 }
+function fixed99(str) {
+  return Number.parseFloat(str).toFixed(2);
+}
 
 function tdWrap(text) {
-  return '<td>' + text + '</td>'
+  return "<td style='mdc-data-table__cell'>" + text + '</td>'
 }
 
 function thWrap(text) {
-  return '<th>' + text + '</th>'
+  return "<th style='mdc-data-table__header-cell'>" + text + '</th>'
 }
 
 function trWrap(text) {
-  return '<tr>' + text + '</tr>'
+  return "<tr style='.mdc-data-table__row'>" + text + '</tr>'
 }
 
-function tableWrap(text) {
-  return '<table>' + text + '</table>'
+function tableWrap(str) {
+  return "<table class='.mdc-data-table'>" + str + "</table>"
 }
