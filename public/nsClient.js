@@ -88,11 +88,8 @@ function financialData(button) {
   xhr.open("GET", "/yahoo/financial/code/" + symbol);
   xhr.onreadystatechange = () => {
     if (xhr.readyState === 4) {
-      
-  zshow.innerHTML = xhr.responseText;
-  
-  button.target.parentNode.children[2].innerHTML = "summary";
-     // button.target.parentNode.parentNode.innerHTML = xhr.responseText
+      zshow.innerHTML = xhr.responseText;
+      button.target.parentNode.children[2].innerHTML = "summary";
     }
   }
   xhr.send();
@@ -157,12 +154,16 @@ function show(E) {
 }
 
 
-function chartData() {
-  xhr.open("GET", "/yahoo/chart/code/" + symbol);
-  xhr.onreadystatechange = () => {
-    if (xhr.readyState === 4) { doChart(xhr.responseText) }
-  };
-  xhr.send();
+async function chartData() {
+  
+  const response = await fetch(
+    `/yahoo/chart/code/${symbol}`,
+    {
+      method: 'GET',
+      credentials: 'omit'
+    })
+
+  doChart(await response.text());
 
   function doChart(json) {
     var T = JSON.parse(json);

@@ -4,8 +4,7 @@ const A = express()
 const axios = require('axios').default
 const { Storage } = require('@google-cloud/storage')
 const storage = new Storage()
-var template = 'Ø'
-var splits = []
+//let template = 'Ø'
 
 // is this in github ?
 
@@ -62,10 +61,24 @@ A.get('/yahoo/financial/code/:code', async (request, response) => {
     }
   })
 
-  splits.push(trWrap(thWrap("Source Name") + tdWrap(nasdaq.data.price.quoteSourceName)))
-  splits.push(trWrap(thWrap("Regular Market Day High:") + tdWrap(nasdaq.data.price.regularMarketDayHigh.fmt)))
-  splits.push(trWrap(thWrap("Regular Market Open Price:") + tdWrap(nasdaq.data.price.regularMarketOpen.fmt)))
-  splits.push(trWrap(thWrap("Regular Market Hours:") + tdWrap(new Date(nasdaq.data.price.regularMarketTime * 1e3))))
+  let splits = [];
+
+  splits.push(trWrap(thWrap(`Open Price ${nasdaq.data.price.currencySymbol}${ tdWrap(nasdaq.data.price.regularMarketOpen.fmt)}`)))  
+  splits.push(trWrap(thWrap("Previous Close ") + tdWrap(nasdaq.data.price.regularMarketPreviousClose.fmt))) 
+  splits.push(trWrap(thWrap("Volume ") + tdWrap(nasdaq.data.price.regularMarketVolume.longFmt)))
+  splits.push(trWrap(thWrap("Price ") + tdWrap(nasdaq.data.price.regularMarketPrice.fmt)))
+  splits.push(trWrap(thWrap("Day ⬆️ ") + tdWrap(nasdaq.data.price.regularMarketDayHigh.fmt)))
+  splits.push(trWrap(thWrap("Day ⬇ ") + tdWrap(nasdaq.data.price.regularMarketDayLow.fmt)))  
+
+  splits.push(trWrap(thWrap("Pre Time") + tdWrap(new Date(nasdaq.data.price.preMarketTime * 1e3).toTimeString().substring(0,17)))) 
+  splits.push(trWrap(thWrap("Pre Price") + tdWrap(nasdaq.data.price.preMarketPrice.fmt))) 
+  splits.push(trWrap(thWrap("Pre Change") + tdWrap(nasdaq.data.price.preMarketChange.fmt))) 
+  
+  splits.push(trWrap(thWrap("Post Time") + tdWrap(new Date(nasdaq.data.price.postMarketTime * 1e3).toTimeString().substring(0,17)))) 
+  splits.push(trWrap(thWrap("Post Price") + tdWrap(nasdaq.data.price.postMarketPrice.fmt))) 
+  splits.push(trWrap(thWrap("Post Change") + tdWrap(nasdaq.data.price.postMarketChange.fmt))) 
+
+  splits.push(trWrap(thWrap("Deadline ") + tdWrap(new Date(nasdaq.data.price.regularMarketTime * 1e3).toTimeString().substring(0,17))))
 
 
 
@@ -210,17 +223,17 @@ function fixed99(str) {
 }
 
 function tdWrap(text) {
-  return "<td style='mdc-data-table__cell'>" + text + '</td>'
+  return "<td>" + text + '</td>'
 }
 
 function thWrap(text) {
-  return "<th style='mdc-data-table__header-cell'>" + text + '</th>'
+  return "<th>" + text + '</th>'
 }
 
 function trWrap(text) {
-  return "<tr style='.mdc-data-table__row'>" + text + '</tr>'
+  return "<tr>" + text + '</tr>'
 }
 
 function tableWrap(str) {
-  return "<table class='.mdc-data-table'>" + str + "</table>"
+  return "<table style='margin: 0.2em'>" + str + "</table>"
 }
