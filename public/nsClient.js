@@ -58,6 +58,7 @@ function summaryData() {
     if (xhr.readyState === 4) {
       once(xhr.responseText);
       chartData();
+      //candleStick();
     }
   };
   xhr.send();
@@ -155,7 +156,7 @@ function show(E) {
 
 
 async function chartData() {
-  
+
   const response = await fetch(
     `/yahoo/chart/code/${symbol}`,
     {
@@ -163,7 +164,9 @@ async function chartData() {
       credentials: 'omit'
     })
 
-  doChart(await response.text());
+  let dataSet = await response.text();
+
+  doChart(dataSet);
 
   function doChart(json) {
     var T = JSON.parse(json);
@@ -172,12 +175,56 @@ async function chartData() {
 
     T.map((slot, ix) => {
       document.getElementById("zchart").appendChild(makeLine(slot));
+      document.getElementById("zcandle").appendChild(makeStick(slot));
     });
+
+    function makeStick(S) {
+
+      let offsetInMinutes =
+        new Date(S.timestamp * 1e3).getHours() * 60 +
+        new Date(S.timestamp * 1e3).getMinutes();
+
+      let twoDollar = 100 * (parseInt(S.close) - 2);
+
+      let g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+
+      g.setAttribute("ztime", S.timestamp);
+      g.setAttribute("zclose", S.close);
+      g.setAttribute("zopen", S.open);
+      g.setAttribute("zhigh", S.high);
+      g.setAttribute("zvolume", S.volume);
+      g.setAttribute("zlow", S.low);
+
+      let temp = document.createElementNS("http://www.w3.org/2000/svg", "line");
+
+      temp.setAttribute("x1", offsetInMinutes);
+      temp.setAttribute("y1", (S.low * 1e2) - twoDollar);
+      temp.setAttribute("x2", offsetInMinutes);
+      temp.setAttribute("y2", (S.high * 1e2) - twoDollar);
+      temp.setAttribute("stroke", "#f00");
+      temp.setAttribute("stroke-width", 1);
+
+      g.appendChild(temp)
+
+      temp = document.createElementNS("http://www.w3.org/2000/svg", "line");
+
+      temp.setAttribute("x1", offsetInMinutes);
+      temp.setAttribute("y1", (S.open * 1e2) - twoDollar);
+      temp.setAttribute("x2", offsetInMinutes);
+      temp.setAttribute("y2", (S.close * 1e2) - twoDollar);
+      temp.setAttribute("stroke", "#fff");
+      temp.setAttribute("stroke-width", 3);
+
+      g.appendChild(temp)
+
+      return g;
+    }
 
     function makeLine(S) {
       var minutes =
         new Date(S.timestamp * 1e3).getHours() * 60 +
         new Date(S.timestamp * 1e3).getMinutes();
+
       var A = polarToCartesian(180, 180, 150 + ((S.high - S.close) * 20), minutes / 2);
       var B = polarToCartesian(180, 180, 150 - ((S.close - S.low) * 20), minutes / 2);
 

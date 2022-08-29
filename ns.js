@@ -63,27 +63,48 @@ A.get('/yahoo/financial/code/:code', async (request, response) => {
 
   let splits = [];
 
-  splits.push(trWrap(thWrap(`Open Price ${nasdaq.data.price.currencySymbol}${ tdWrap(nasdaq.data.price.regularMarketOpen.fmt)}`)))  
-  splits.push(trWrap(thWrap("Previous Close ") + tdWrap(nasdaq.data.price.regularMarketPreviousClose.fmt))) 
-  splits.push(trWrap(thWrap("Volume ") + tdWrap(nasdaq.data.price.regularMarketVolume.longFmt)))
-  splits.push(trWrap(thWrap("Price ") + tdWrap(nasdaq.data.price.regularMarketPrice.fmt)))
-  splits.push(trWrap(thWrap("Day ⬆️ ") + tdWrap(nasdaq.data.price.regularMarketDayHigh.fmt)))
-  splits.push(trWrap(thWrap("Day ⬇ ") + tdWrap(nasdaq.data.price.regularMarketDayLow.fmt)))  
+  splits[0] += thWrap("Open")
+  splits[1] += tdWrap(`${nasdaq.data.price.regularMarketOpen.fmt}`)
 
-  splits.push(trWrap(thWrap("Pre Time") + tdWrap(new Date(nasdaq.data.price.preMarketTime * 1e3).toTimeString().substring(0,17)))) 
-  splits.push(trWrap(thWrap("Pre Price") + tdWrap(nasdaq.data.price.preMarketPrice.fmt))) 
-  splits.push(trWrap(thWrap("Pre Change") + tdWrap(nasdaq.data.price.preMarketChange.fmt))) 
-  
-  splits.push(trWrap(thWrap("Post Time") + tdWrap(new Date(nasdaq.data.price.postMarketTime * 1e3).toTimeString().substring(0,17)))) 
-  splits.push(trWrap(thWrap("Post Price") + tdWrap(nasdaq.data.price.postMarketPrice.fmt))) 
-  splits.push(trWrap(thWrap("Post Change") + tdWrap(nasdaq.data.price.postMarketChange.fmt))) 
+  splits[0] += thWrap("Prev")
+  splits[1] += tdWrap(nasdaq.data.price.regularMarketPreviousClose.fmt)
 
-  splits.push(trWrap(thWrap("Deadline ") + tdWrap(new Date(nasdaq.data.price.regularMarketTime * 1e3).toTimeString().substring(0,17))))
+  splits[0] += thWrap("Volume ")
+  splits[1] += tdWrap(nasdaq.data.price.regularMarketVolume.longFmt)
+
+  splits[0] += thWrap(nasdaq.data.price.currencySymbol)
+  splits[1] += tdWrap(nasdaq.data.price.regularMarketPrice.fmt)
+
+  splits[0] += thWrap("⬆️")
+  splits[1] += tdWrap(nasdaq.data.price.regularMarketDayHigh.fmt)
+
+  splits[0] += thWrap("⬇")
+  splits[1] += tdWrap(nasdaq.data.price.regularMarketDayLow.fmt)
+
+  splits[0] += thWrap("Pre T")
+  splits[1] += tdWrap(new Date(nasdaq.data.price.preMarketTime * 1e3).toTimeString().substring(0, 8))
+
+  splits[0] += thWrap("Pre Price")
+  splits[1] += tdWrap(nasdaq.data.price.preMarketPrice.fmt)
+
+  splits[0] += thWrap("Pre Change")
+  splits[1] += tdWrap(nasdaq.data.price.preMarketChange.fmt)
+
+  splits[0] += thWrap("Post T")
+  splits[1] += tdWrap(new Date(nasdaq.data.price.postMarketTime * 1e3).toTimeString().substring(0, 8))
+
+  splits[0] += thWrap("Post Price")
+  splits[1] += tdWrap(nasdaq.data.price.postMarketPrice.fmt)
+
+  splits[0] += thWrap("Post Change")
+  splits[1] += tdWrap(nasdaq.data.price.postMarketChange.fmt)
+
+  splits[0] += thWrap("Deadline ")
+  splits[1] += tdWrap(new Date(nasdaq.data.price.regularMarketTime * 1e3).toTimeString().substring(0, 8))
 
 
-
-response.type('html')
-response.send(tableWrap(splits.join(" ")))
+  response.type('html')
+  response.send(tableWrap(trWrap(splits[0]) + trWrap(splits[1])))
 
 })
 
@@ -167,9 +188,6 @@ A.get('/yahoo/chart/history/code/:code', async (request, response) => {
 
 A.get('/yahoo/holders/code/:code', async (request, response) => {
 
-
-  //const template = await getTemplate('ns.html')
-
   const nasdaq = await axios.get('https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-holders',
     {
       params: {
@@ -182,8 +200,9 @@ A.get('/yahoo/holders/code/:code', async (request, response) => {
       },
     }
   )
-  //var splits = template.split('##'), W = {};
-  var W = {}
+  let splits = [];
+  let W = {}
+
   splits[1] = trWrap(thWrap('who') + thWrap('what') + thWrap('when') + thWrap('value'));
 
   for (var ix = 0; ix < nasdaq.data?.insiderTransactions.transactions.length; ix++) {
@@ -207,7 +226,8 @@ async function getTemplate(what) {
 
   const nasdaqTemplate = storage.bucket('nasdaqcomponents').file(what)
 
-  var data = [], aggregate = ''
+  let data = [];
+  let aggregate = '';
 
   aggregate = nasdaqTemplate.createReadStream()
   aggregate.on('data', (fragment) => { data.push(fragment) })

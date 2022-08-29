@@ -6,15 +6,174 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Fira+Code&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Fira+Code:wght@300;500&family=IBM+Plex+Sans:wght@300&display=swap"
+    rel="stylesheet">
   <link href="https://unpkg.com/material-components-web@6.0.0/dist/material-components-web.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://storage.googleapis.com/nasdaqcomponents/ns.svg" rel="icon">
-  <link href="https://storage.googleapis.com/nasdaqcomponents/ns.css" rel="stylesheet">
+  <style>
+    table {
+      border-collapse: collapse;
+      margin: none;
+      width: 99%;
+      background-color: #ffffff20;
+    }
+
+    td,
+    th {
+      border: solid .5px white;
+      padding: 0.5em 1em;
+      text-align: center;
+      white-space: nowrap
+    }
+
+    th {
+      font-weight: 300;
+      border-bottom: 0;
+    }
+
+    td {
+      border-top: 0;
+    }
+
+    h5 {
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    h5::before {
+      display: inline-block;
+      vertical-align: middle;
+      content: url("https://storage.googleapis.com/nasdaqcomponents/ns.svg");
+      background-size: 32px 32px;
+      height: 32px;
+      width: 32px;
+      flex-direction: row;
+      align-items: baseline;
+    }
+
+    img.ns-img {
+      float: left;
+      width: 360px;
+      margin: 1em;
+      margin-left: 0;
+      opacity: 0.5;
+      filter: invert(1) grayscale(1)
+    }
+
+    img.ns-image-right {
+      float: right;
+      width: 360px;
+      margin: 1em;
+      margin-left: 0;
+      opacity: 0.5;
+      filter: invert(1) grayscale(1)
+    }
+
+    div {
+      float: left;
+    }
+
+    p {
+      min-width: auto;
+      padding: 0 1em;
+      line-height: 1.5em;
+
+    }
+
+    #zchart {
+      pointer-events: visibleStroke;
+    }
+
+    #nasdaq {
+      letter-spacing: 0.33em;
+      font-weight: 100;
+    }
+
+    #zsymbol {
+      font-size: 150%;
+    }
+
+    #znow {
+      margin: 0;
+      padding: 0;
+      font-size: .9em;
+      letter-spacing: normal;
+    }
+
+    #zlongName {
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: .2em;
+    }
+
+    #zmap {
+      height: 300px;
+      width: 300px;
+      border-radius: 3%;
+      opacity: 0.5;
+    }
+
+
+    .ns-column {
+      float: left;
+      min-width: 360px;
+      min-height: 600px;
+      width: 50%;
+      position: relative;
+      box-sizing: border-box;
+    }
+
+    .ns-head-line {
+      text-align: center;
+      font-size: 110%;
+    }
+
+
+    .ns-declare-content {
+      width: 10.5%;
+      padding: 1%;
+      text-align: center;
+      float: left;
+    }
+
+    .ns-declare {
+      width: 100%
+    }
+
+    .ns-content {
+      font-weight: 300;
+      font-size: 1em;
+      padding: 1em 0;
+      float: none;
+      width: 100%;
+    }
+
+    .ns-row {
+      min-width: 400px;
+      font-size: 100%;
+      width: 100%;
+      margin: 0;
+      clear: both;
+    }
+
+    .ns-head-line {
+      width: 100%;
+      line-height: 3em;
+      color: #fff;
+      background-color: #ffffff60;
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body style="
 font-size: 14px;
+font-weight: 500;
 color: white;
 font-family: 'Fira Code';
 background-color: #111;
@@ -23,10 +182,11 @@ background-image: linear-gradient(#00000080, #00000080),
 background-attachment: fixed;
 background-size: cover;
 object-fit: contain;
-font-variant-ligatures: common-ligatures,
-font-feature-settings: 'liga'; 
 margin: 0;
-padding: 0;" onload="znow.textContent = new Date()">
+padding: 0;
+
+font-variant-ligatures: common-ligatures;
+font-feature-settings: 'liga'; " onload="znow.textContent = new Date()">
 
   <div class="ns-row ">
     <div class="ns-head-line">
@@ -55,6 +215,9 @@ padding: 0;" onload="znow.textContent = new Date()">
   </div>
 
   <div class="ns-row ">
+
+    <div id="zshow"></div>
+
     <div class="ns-declare-content">
       <div class="ns-declare">
         <svg width="48px" height="48px" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -170,9 +333,8 @@ padding: 0;" onload="znow.textContent = new Date()">
 
   <div class="ns-row">
     <div class="ns-column">
-      <div id="zshow"></div>
-
       <p id="zsummary"></p>
+
       <svg style="position: absolute; left:0;top:0" xmlns="http://www.w3.org/2000/svg" width="100%"
         viewBox="0 0 320 320" opacity=".33">
         <defs>
@@ -254,11 +416,13 @@ padding: 0;" onload="znow.textContent = new Date()">
           <text x="0" y="10" text-anchor="start" font-size="8"> 12 hour display, 5 minutte interval</text>
         </g>
       </svg>
-
-
-
     </div>
   </div>
+  <div class="ns-row">
+    <svg xmlns="http://www.w3.org/2000/svg" id="zcandle" style="width:100%" viewBox="0 0 1440 300">
+    </svg>
+  </div>
+  
 </body>
 <!--script async
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMl9hHglNUhPfbDyDsEuDwU0O3JYp2aBg&callback=googleMap&map_ids=dbb06a73c56861a2"></script-->
