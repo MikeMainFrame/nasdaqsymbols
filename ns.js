@@ -3,7 +3,6 @@ const express = require('express')
 const A = express()
 const axios = require('axios').default
 const { Storage } = require('@google-cloud/storage')
-const storage = new Storage()
 //let template = 'Ø'
 
 // is this in github ?
@@ -123,6 +122,8 @@ A.get('/yahoo/chart/code/:code', async (request, response) => {
     },
   })
 
+  putNASDAQ(nasdaq.data, nasdaq.data.chart.result[0].meta)
+
   let collection = []
 
   nasdaq.data.chart.result[0].timestamp.map((T, ix) => {
@@ -224,6 +225,7 @@ A.get('/yahoo/holders/code/:code', async (request, response) => {
 
 async function getTemplate(what) {
 
+  const storage = new Storage()
   const nasdaqTemplate = storage.bucket('nasdaqcomponents').file(what)
 
   let data = [];
@@ -237,6 +239,12 @@ async function getTemplate(what) {
     aggregate.on('error', (E) => reject(E))
   })
 
+}
+function putNASDAQ(apiData, meta) {
+  let fileName = new Date(meta.regularMarketTime * 1e3).toJSON().split(':').join('').split('-').join('')
+  const storage = new Storage()
+  const F = storage.bucket('nasdaqprices').file(`symbols/${meta.symbol}.${fileName}.json`);
+  F.save(JSON.stringify(apiData), function (E) { if (E) console.log(E) })
 }
 function fixed99(str) {
   return Number.parseFloat(str).toFixed(2);

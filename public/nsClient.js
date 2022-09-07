@@ -1,6 +1,6 @@
 /* MikeOwlWolf was here and did some coding - 20220609 - #003 */
 
-var xhr = new XMLHttpRequest(),
+let xhr = new XMLHttpRequest(),
   anchor,
   map,
   remember,
@@ -8,8 +8,8 @@ var xhr = new XMLHttpRequest(),
   symbol = window.location.href.split("?symbol=")[1];
 date = window.location.href.split("?date=")[1];
 
-var show1 = document.getElementById('zholders').addEventListener("click", holdersData)
-var show2 = document.getElementById('zfinance').addEventListener("click", financialData)
+document.getElementById('zholders').addEventListener("click", holdersData)
+document.getElementById('zfinance').addEventListener("click", financialData)
 //summaryData();
 
 function addressToGeo(address, who) {
@@ -64,7 +64,7 @@ function summaryData() {
   xhr.send();
 
   function once(json) {
-    var R = JSON.parse(json);
+    let R = JSON.parse(json);
 
     document.getElementById("zsymbol").textContent = symbol;
     document.getElementById("zlongName").textContent = R.longName;
@@ -116,14 +116,14 @@ async function holdersData(button) {
 
 function where(E) {
 
-  var pt = zchart.createSVGPoint(); pt.x = E.clientX; pt.y = E.clientY;
-  var loc = pt.matrixTransform(zchart.getScreenCTM().inverse());
-  var W = document.getElementById("zcircle");
+  let pt = zchart.createSVGPoint(); pt.x = E.clientX; pt.y = E.clientY;
+  let loc = pt.matrixTransform(zchart.getScreenCTM().inverse());
+  let W = document.getElementById("zcircle");
   if (W) {
     W.setAttribute("cx", loc.x);
     W.setAttribute("cy", loc.y);
   } else {
-    var circle = document.createElementNS(
+    let circle = document.createElementNS(
       "http://www.w3.org/2000/svg",
       "circle"
     );
@@ -169,7 +169,8 @@ async function chartData() {
   doChart(dataSet);
 
   function doChart(json) {
-    var T = JSON.parse(json);
+    let T = JSON.parse(json);
+    let S0;
 
     document.getElementById("currentPrice").textContent = T[T.length - 1].close;
 
@@ -178,13 +179,16 @@ async function chartData() {
       document.getElementById("zcandle").appendChild(makeStick(slot));
     });
 
-    function makeStick(S) {
+    document.getElementById("zcandle").addEventListener("mousemove", where);
+    document.getElementById("zcandle").addEventListener("mouseover", show);
+
+    function makeStick(S, S0) {
 
       let offsetInMinutes =
         new Date(S.timestamp * 1e3).getHours() * 60 +
         new Date(S.timestamp * 1e3).getMinutes();
-
-      let twoDollar = 100 * (parseInt(S.close) - 2);
+      let twoDollar = parseInt((S.close - 2)); // show only the tip of the column
+      let aequator = 400;
 
       let g = document.createElementNS("http://www.w3.org/2000/svg", "g");
 
@@ -195,58 +199,73 @@ async function chartData() {
       g.setAttribute("zvolume", S.volume);
       g.setAttribute("zlow", S.low);
 
-      let temp = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      let line = document.createElementNS("http://www.w3.org/2000/svg", "line");
 
-      temp.setAttribute("x1", offsetInMinutes);
-      temp.setAttribute("y1", (S.low * 1e2) - twoDollar);
-      temp.setAttribute("x2", offsetInMinutes);
-      temp.setAttribute("y2", (S.high * 1e2) - twoDollar);
-      temp.setAttribute("stroke", "#f00");
-      temp.setAttribute("stroke-width", 1);
+      line.setAttribute("x1", offsetInMinutes);
+      line.setAttribute("y1", aequator - ((S.low - twoDollar) * 100));
+      line.setAttribute("x2", offsetInMinutes);
+      line.setAttribute("y2", aequator - ((S.high - twoDollar) * 100));
+      line.setAttribute("stroke", "#625B71");
+      line.setAttribute("stroke-width", 0.5);
 
-      g.appendChild(temp)
+      g.appendChild(line)
 
-      temp = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      line = document.createElementNS("http://www.w3.org/2000/svg", "line");
 
-      temp.setAttribute("x1", offsetInMinutes);
-      temp.setAttribute("y1", (S.open * 1e2) - twoDollar);
-      temp.setAttribute("x2", offsetInMinutes);
-      temp.setAttribute("y2", (S.close * 1e2) - twoDollar);
-      temp.setAttribute("stroke", "#fff");
-      temp.setAttribute("stroke-width", 3);
+      line.setAttribute("x1", offsetInMinutes);
+      line.setAttribute("y1", aequator - ((S.open - twoDollar) * 1e2));
+      line.setAttribute("x2", offsetInMinutes);
+      line.setAttribute("y2", aequator - ((S.close - twoDollar) * 1e2));
+      line.setAttribute("stroke", redGreen(S));
+      line.setAttribute("stroke-linecap", "round")
+      line.setAttribute("stroke-width", 4);
 
-      g.appendChild(temp)
+      g.appendChild(line)
+
+      let circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+      
+      circle.setAttribute("cx", offsetInMinutes);
+      circle.setAttribute("cy", 400 - ((S.close - twoDollar) * 100));
+      circle.setAttribute("r", 2);
+      circle.setAttribute("stroke", "none");
+      circle.setAttribute("fill", "#ffa500");
+
+      g.appendChild(circle)
 
       return g;
     }
+    function redGreen(S) {
 
+      return (S.open < S.close) ? "#aa6000" : "#009cff";
+    }
     function makeLine(S) {
-      var minutes =
+
+      let minutes =
         new Date(S.timestamp * 1e3).getHours() * 60 +
         new Date(S.timestamp * 1e3).getMinutes();
 
-      var A = polarToCartesian(180, 180, 150 + ((S.high - S.close) * 20), minutes / 2);
-      var B = polarToCartesian(180, 180, 150 - ((S.close - S.low) * 20), minutes / 2);
+      let A = polarToCartesian(180, 180, 150 + ((S.high - S.close) * 20), minutes / 2);
+      let B = polarToCartesian(180, 180, 150 - ((S.close - S.low) * 20), minutes / 2);
 
-      var temp = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      let line = document.createElementNS("http://www.w3.org/2000/svg", "line");
 
-      temp.setAttribute("x1", A.x);
-      temp.setAttribute("y1", A.y);
-      temp.setAttribute("x2", B.x);
-      temp.setAttribute("y2", B.y);
-      temp.setAttribute("ztime", S.timestamp);
-      temp.setAttribute("zclose", S.close);
-      temp.setAttribute("zopen", S.open);
-      temp.setAttribute("zhigh", S.high);
-      temp.setAttribute("zvolume", S.volume);
-      temp.setAttribute("zlow", S.low);
-      temp.setAttribute("stroke", "#fff");
-      temp.setAttribute("stroke-width", 3);
+      line.setAttribute("x1", A.x);
+      line.setAttribute("y1", A.y);
+      line.setAttribute("x2", B.x);
+      line.setAttribute("y2", B.y);
+      line.setAttribute("ztime", S.timestamp);
+      line.setAttribute("zclose", S.close);
+      line.setAttribute("zopen", S.open);
+      line.setAttribute("zhigh", S.high);
+      line.setAttribute("zvolume", S.volume);
+      line.setAttribute("zlow", S.low);
+      line.setAttribute("stroke", "#fff");
+      line.setAttribute("stroke-width", 3);
 
-      return temp;
+      return line;
 
       function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
-        var angleInRadians = ((angleInDegrees - 90) * Math.PI) / 180.0;
+        let angleInRadians = ((angleInDegrees - 90) * Math.PI) / 180.0;
 
         return {
           x: centerX + radius * Math.cos(angleInRadians),
