@@ -1,0 +1,30 @@
+{
+  "name": "nasdaq_symbols",
+  "version": "1.2.0",
+  "description": "Yahoo Finance API - Stocks",
+  "dependencies": {
+    "@google-cloud/storage": "^6.4.2",
+    "axios": "^0.21.4",
+    "express": "^4.18.1",
+    "ns.js": "^0.4.1",
+    "unirest": "^0.6.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MikeMainFrame/nasdaqsymbols.git"
+  },
+  "keywords": [
+    "ns"
+  ],
+  "author": "mikeMainframe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MikeMainFrame/nasdaqsymbols/issues"
+  },
+  "homepage": "https://github.com/MikeMainFrame/nasdaqsymbols#readme",
+  "main": "server.js"
+}
