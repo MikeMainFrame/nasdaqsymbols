@@ -228,7 +228,7 @@ async function chartData() {
       circle.setAttribute("cy", 400 - ((S.close - twoDollar) * 100));
       circle.setAttribute("r", 2);
       circle.setAttribute("stroke", "none");
-      circle.setAttribute("fill", "#ffa500");
+      circle.setAttribute("fill", "#fff");
 
       g.appendChild(circle)
 
@@ -236,7 +236,7 @@ async function chartData() {
     }
     function redGreen(S) {
 
-      return (S.open < S.close) ? "#aa6000" : "#009cff";
+      return (S.open < S.close) ? "#ff3088" : "#2fff00";
     }
     function makeLine(S) {
 
