@@ -5,6 +5,8 @@ const axios = require( 'axios' ).default
 const { PubSub } = require( '@google-cloud/pubsub' );
 const { Storage } = require( '@google-cloud/storage' )
 const timestamp = require( './timestamp.js' );
+const keyData = require( './keyData.js' );
+
 
 //let template = 'Ø'
 
@@ -18,6 +20,23 @@ A.listen( process.env.PORT || 3000, () => {
   publishMessage( 'server started at: ' + timestamp() )
   //synchronousPull();
   console.log( 'all ears ear ea r, Press Ctrl+C to quit.' )
+} )
+
+A.get( '/yahoo/csv', async ( request, response ) => {
+  let temp = await getTemplate( 'saxo2022.txt' )
+  let x = [], y = [];
+  let D = temp.split( '\x0D\x0A' )
+  D.map( ( element ) => {
+    var L = element.split( "," );    
+    for ( let ix = 0; ix < L.length; ix++ ) {
+      x.push(tdWrap( L[ ix ] ))
+    }
+    y.push( trWrap( x.join('')));
+    x = [];
+  } )
+
+  response.type( 'html' )
+  response.send( tableWrap( y.join('') ) )
 } )
 
 A.get( '/yahoo/summary/code/:code', async ( request, response ) => {
@@ -67,50 +86,9 @@ A.get( '/yahoo/financial/code/:code', async ( request, response ) => {
     }
   } )
 
-  let splits = [];
-
-  splits[ 0 ] += thWrap( "Open" )
-  splits[ 1 ] += tdWrap( `${nasdaq.data.price.regularMarketOpen.fmt}` )
-
-  splits[ 0 ] += thWrap( "Prev" )
-  splits[ 1 ] += tdWrap( nasdaq.data.price.regularMarketPreviousClose.fmt )
-
-  splits[ 0 ] += thWrap( "Volume " )
-  splits[ 1 ] += tdWrap( nasdaq.data.price.regularMarketVolume.longFmt )
-
-  splits[ 0 ] += thWrap( nasdaq.data.price.currencySymbol )
-  splits[ 1 ] += tdWrap( nasdaq.data.price.regularMarketPrice.fmt )
-
-  splits[ 0 ] += thWrap( "⬆️" )
-  splits[ 1 ] += tdWrap( nasdaq.data.price.regularMarketDayHigh.fmt )
-
-  splits[ 0 ] += thWrap( "⬇" )
-  splits[ 1 ] += tdWrap( nasdaq.data.price.regularMarketDayLow.fmt )
-
-  splits[ 0 ] += thWrap( "Pre T" )
-  splits[ 1 ] += tdWrap( new Date( nasdaq.data.price.preMarketTime * 1e3 ).toTimeString().substring( 0, 8 ) )
-
-  splits[ 0 ] += thWrap( "Pre Price" )
-  splits[ 1 ] += tdWrap( nasdaq.data.price.preMarketPrice.fmt )
-
-  splits[ 0 ] += thWrap( "Pre Change" )
-  splits[ 1 ] += tdWrap( nasdaq.data.price.preMarketChange.fmt )
-
-  splits[ 0 ] += thWrap( "Post T" )
-  splits[ 1 ] += tdWrap( new Date( nasdaq.data.price.postMarketTime * 1e3 ).toTimeString().substring( 0, 8 ) )
-
-  splits[ 0 ] += thWrap( "Post Price" )
-  splits[ 1 ] += tdWrap( nasdaq.data.price.postMarketPrice.fmt )
-
-  splits[ 0 ] += thWrap( "Post Change" )
-  splits[ 1 ] += tdWrap( nasdaq.data.price.postMarketChange.fmt )
-
-  splits[ 0 ] += thWrap( "Deadline " )
-  splits[ 1 ] += tdWrap( new Date( nasdaq.data.price.regularMarketTime * 1e3 ).toTimeString().substring( 0, 8 ) )
-
 
   response.type( 'html' )
-  response.send( tableWrap( trWrap( splits[ 0 ] ) + trWrap( splits[ 1 ] ) ) )
+  response.send( keyData( nasdaq.data.price ) )
 
 } )
 
@@ -152,7 +130,6 @@ A.get( '/yahoo/chart/code/:code', async ( request, response ) => {
 
 A.get( '/yahoo/chart/history/local/code/:code', async ( request, response ) => {
 
-  let html = "";
   const storage = new Storage()
   const [ collection ] = await storage.bucket( 'nasdaqprices' ).getFiles( { prefix: 'symbols/' + request.params.code } )
 
@@ -190,10 +167,10 @@ A.get( '/yahoo/chart/history/code/:code', async ( request, response ) => {
     }
   )
 
-  var collection = []
+  let collection = []
 
   nasdaq.data.chart.result[ 0 ].timestamp.map( ( T, ix ) => {
-    var slot = {}
+    let slot = {}
     slot.timestamp = T
     slot.dateISO = new Date( T * 1e3 ).toISOString()
     slot.close = nasdaq.data.chart.result[ 0 ].close[ ix ]
@@ -211,7 +188,8 @@ A.get( '/yahoo/chart/history/code/:code', async ( request, response ) => {
 
 
 A.get( '/yahoo/newsletter/code/:code', async ( request, response ) => {
-  if ( request.params.code === 'owlwolf' ) newsletter();
+  const { newsLetter } = require( './newsLetter.js' );
+  if ( request.params.code === 'owlwolf' ) newsLetter();
 } )
 
 A.get( '/yahoo/holders/code/:code', async ( request, response ) => {
@@ -228,14 +206,15 @@ A.get( '/yahoo/holders/code/:code', async ( request, response ) => {
       },
     }
   )
+
   let splits = [];
   let W = {}
 
-  splits[ 1 ] = trWrap( thWrap( 'who' ) + thWrap( 'what' ) + thWrap( 'when' ) + thWrap( 'value' ) );
+  html = trWrap( thWrap( 'who' ) + thWrap( 'what' ) + thWrap( 'when' ) + thWrap( 'value' ) );
 
-  for ( var ix = 0; ix < nasdaq.data?.insiderTransactions.transactions.length; ix++ ) {
+  for ( let ix = 0; ix < nasdaq.data?.insiderTransactions.transactions.length; ix++ ) {
     W = nasdaq.data?.insiderTransactions.transactions[ ix ] || {}
-    if ( 'filerName' in W ) splits[ 1 ] = splits[ 1 ]
+    if ( 'filerName' in W ) html = html
       + trWrap(
         tdWrap( W.filerName )
         + tdWrap( W.transactionText )
@@ -243,19 +222,22 @@ A.get( '/yahoo/holders/code/:code', async ( request, response ) => {
         + tdWrap( W.shares.fmt )
       )
   }
-  splits[ 1 ] = tableWrap( splits[ 1 ] )
+  html = tableWrap( html )
   response.type( 'html' )
-  response.send( splits[ 1 ] )
+  response.send( html )
   //response.send(splits.join(''))
 } )
 
 
 async function getTemplate( what ) {
 
+
+  const storage = new Storage()
   const nasdaqTemplate = storage.bucket( 'nasdaqcomponents' ).file( what )
 
   let data = [];
   let aggregate = '';
+  let template = '';
 
   aggregate = nasdaqTemplate.createReadStream()
   aggregate.on( 'data', ( fragment ) => { data.push( fragment ) } )
@@ -279,11 +261,11 @@ function fixed99( str ) {
 }
 
 function tdWrap( text ) {
-  return "<td>" + text + '</td>'
+  return "<td style='border: solid; padding: .5em;text-align: center;' >" + text + '</td>'
 }
 
-function thWrap( text ) {
-  return "<th>" + text + '</th>'
+function thWrap( text, noOfCols = 1 ) {
+  return `<th style='text-align: center; padding: .5em' colspan=${noOfCols} > ${text}</th>`
 }
 
 function trWrap( text ) {
@@ -291,13 +273,13 @@ function trWrap( text ) {
 }
 
 function tableWrap( str ) {
-  return "<table style='margin: 0.2em'>" + str + "</table>"
+  return "<table style='border-collapse:collapse'>" + str + "</table>"
 }
 
-async function publishMessage( data ) {
+async function publishMessage( what ) {
 
   const pubSubClient = new PubSub();
-  const dataBuffer = Buffer.from( data );
+  const dataBuffer = Buffer.from( what );
 
   try {
     const messageId = await pubSubClient
@@ -309,18 +291,5 @@ async function publishMessage( data ) {
   }
 }
 
-async function synchronousPull() {
-
-  const { PubSub } = require( '@google-cloud/pubsub' );
-  const pubsub = new PubSub();
-
-  const topic = pubsub.topic( 'projects/nasdaqsymbols/topics/news' );
-  const subscription = topic.subscription( 'projects/nasdaqsymbols/subscriptions/news' );
-
-  subscription.on( 'message', message => {
-    console.log( JSON.stringify( Buffer.from( message.data ).toString( 'utf8' ), null, 2 ) )
-    message.ack();
-  } );
 
 
-}
