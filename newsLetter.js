@@ -113,7 +113,7 @@ exports.newsLetter = async ( I, O ) => {
       + tdWrap( new Date( sub?.preMarketTime * 1e3 ).toTimeString().substring( 0, 5 ) )
       + tdWrap( sub?.preMarketPrice.fmt )
       + tdWrap( sub?.preMarketChange.fmt )
-      + tdWrap( timestamp( sub.regularMarketTime ) )
+      + tdWrap( timestamp( sub.regularMarketTime * 1e3 ) )
     )
   }
 

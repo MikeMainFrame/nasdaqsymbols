@@ -8,7 +8,7 @@ const timestamp = require( './timestamp.js' );
 const keyData = require( './keyData.js' );
 
 
-//let template = 'Ø'
+let html = 'Ø'
 
 // is this in github ?
 
@@ -17,27 +17,28 @@ A.use( express.json() )
 A.use( '/', express.static( 'public', { index: 'nsMain.html', } ) )
 
 A.listen( process.env.PORT || 3000, () => {
-  publishMessage( 'server started at: ' + timestamp() )
+  publishMessage( 'nasdaqsymbols server started at: ' + timestamp() )
   //synchronousPull();
   console.log( 'all ears ear ea r, Press Ctrl+C to quit.' )
 } )
 
 A.get( '/yahoo/csv', async ( request, response ) => {
-  let temp = await getTemplate( 'saxo2022.txt' )
+  let temp = await getTemplate( '3050_CVR.csv' )
   let x = [], y = [];
   let D = temp.split( '\x0D\x0A' )
   D.map( ( element ) => {
-    var L = element.split( "," );    
+    var L = element.split( "," );
     for ( let ix = 0; ix < L.length; ix++ ) {
-      x.push(tdWrap( L[ ix ] ))
+      x.push( tdWrap( L[ ix ] ) )
     }
-    y.push( trWrap( x.join('')));
+    y.push( trWrap( x.join( '' ) ) );
     x = [];
   } )
 
   response.type( 'html' )
-  response.send( tableWrap( y.join('') ) )
+  response.send( tableWrap( y.join( '' ) ) )
 } )
+
 
 A.get( '/yahoo/summary/code/:code', async ( request, response ) => {
 
@@ -283,7 +284,7 @@ async function publishMessage( what ) {
 
   try {
     const messageId = await pubSubClient
-      .topic( 'news' )
+      .topic( 'server-activity' )
       .publishMessage( { data: dataBuffer } );
   } catch ( error ) {
     console.error( `Received error while publishing: ${error.message}` );
