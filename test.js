@@ -1,3 +1,4 @@
 
-const { newsLetter } = require( './newsLetter.js' );
+const { newsLetter } = require( './nsNewsLetter.js' );
+
 newsLetter();

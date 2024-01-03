@@ -1,4 +1,4 @@
-module.exports = function timestamp( milliseconds = new Date() ) {
+module.exports = function timestamp( milliseconds = new Date() ) {  
 
   let date = new Date( milliseconds );
   
