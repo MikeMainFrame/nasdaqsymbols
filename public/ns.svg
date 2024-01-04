@@ -19,10 +19,6 @@
 	c0.2-1.793-0.255-3.582-1.252-5.049l14.962-14.963c1.467,0.998,3.254,1.455,5.051,1.252c2.266-0.253,4.293-1.523,5.51-3.452
 	c3.652-5.788,6.583-11.985,8.784-18.429l13.854,0.497c0.091,0.003,0.183,0.005,0.273,0.005c2.092,0,3.991-0.868,5.357-2.266
 	c0.041-0.039,0.085-0.073,0.125-0.113l18.29-18.291c2.236-2.236,3.469-5.21,3.469-8.373S212.33,116.775,210.116,114.561z" 
-	fill="none" stroke="#fff" stroke-width="6"  />
-</g>
-<g>
-	<svg xmlns='http://www.w3.org/2000/svg' width='500000'  height='70000' <path d='M 0,57142 0, -42857' stroke='#fff' stroke-width='100'/><path d='M 0,7142 0, 57142' stroke='#fff' stroke-width='500'/><path d='M 12000,94285 12000, 48571' stroke='#fff' stroke-width='100'/><path d='M 12000,55714 12000, 62857' stroke='#fff' stroke-width='500'/><path d='M 24000,71428 24000, 42857' stroke='#fff' 
-stroke-width='100'/><path d='M 24000,64285 24000, 70000' stroke='#fff' stroke-width='500'/><path d='M 36000,72857 36000, 60000' stroke='#fff' stroke-width='100'/><path d='M 36000,64285 36000, 64285' stroke='#fff' stroke-width='500'/><path d='M 48000,74285 48000, 35714' stroke='#fff' stroke-width='100'/><path d='M 48000,64285 48000, 41428' stroke='#fff' stroke-width='500'/><path d='M 60000,44285 60000, 0' stroke='#fff' stroke-width='100'/><path d='M 60000,44285 60000, 0' stroke='#fff' stroke-width='500'/>
+	fill="none" stroke="#888" stroke-width="6"  />
 </g>
 </svg>

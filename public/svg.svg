@@ -1,0 +1,569 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox="0 0 5000 700 "
+  style="background-color: black; width: 100%">
+  <path d='M 0 , 744 0 , 661' stroke='#fff' stroke-width='2' />
+  <path d='M 0 ,661 0 , 700' stroke='#f00' stroke-width='13.227513227513228' />
+  <path d='M 26 , 698 26 , 664' stroke='#fff' stroke-width='2' />
+  <path d='M 26 ,694 26 , 672' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 52 , 670 52 , 637' stroke='#fff' stroke-width='2' />
+  <path d='M 52 ,670 52 , 637' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 79 , 664 79 , 615' stroke='#fff' stroke-width='2' />
+  <path d='M 79 ,642 79 , 650' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 105 , 661 105 , 624' stroke='#fff' stroke-width='2' />
+  <path d='M 105 ,642 105 , 626' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 132 , 644 132 , 627' stroke='#fff' stroke-width='2' />
+  <path d='M 132 ,644 132 , 644' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 158 , 627 158 , 568' stroke='#fff' stroke-width='2' />
+  <path d='M 158 ,624 158 , 587' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 185 , 602 185 , 565' stroke='#fff' stroke-width='2' />
+  <path d='M 185 ,570 185 , 576' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 211 , 583 211 , 550' stroke='#fff' stroke-width='2' />
+  <path d='M 211 ,576 211 , 583' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 238 , 579 238 , 531' stroke='#fff' stroke-width='2' />
+  <path d='M 238 ,568 238 , 539' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 264 , 568 264 , 531' stroke='#fff' stroke-width='2' />
+  <path d='M 264 ,548 264 , 568' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 291 , 596 291 , 568' stroke='#fff' stroke-width='2' />
+  <path d='M 291 ,581 291 , 596' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 317 , 598 317 , 568' stroke='#fff' stroke-width='2' />
+  <path d='M 317 ,587 317 , 598' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 343 , 605 343 , 579' stroke='#fff' stroke-width='2' />
+  <path d='M 343 ,603 343 , 587' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 370 , 598 370 , 579' stroke='#fff' stroke-width='2' />
+  <path d='M 370 ,596 370 , 579' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 396 , 600 396 , 598' stroke='#fff' stroke-width='2' />
+  <path d='M 396 ,600 396 , 598' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 423 , 598 423 , 587' stroke='#fff' stroke-width='2' />
+  <path d='M 423 ,589 423 , 591' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 449 , 618 449 , 592' stroke='#fff' stroke-width='2' />
+  <path d='M 449 ,592 449 , 605' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 476 , 624 476 , 607' stroke='#fff' stroke-width='2' />
+  <path d='M 476 ,607 476 , 624' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 502 , 624 502 , 603' stroke='#fff' stroke-width='2' />
+  <path d='M 502 ,624 502 , 622' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 529 , 624 529 , 592' stroke='#fff' stroke-width='2' />
+  <path d='M 529 ,605 529 , 605' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 555 , 603 555 , 600' stroke='#fff' stroke-width='2' />
+  <path d='M 555 ,603 555 , 602' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 582 , 592 582 , 554' stroke='#fff' stroke-width='2' />
+  <path d='M 582 ,592 582 , 555' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 608 , 591 608 , 550' stroke='#fff' stroke-width='2' />
+  <path d='M 608 ,557 608 , 557' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 634 , 583 634 , 555' stroke='#fff' stroke-width='2' />
+  <path d='M 634 ,557 634 , 583' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 661 , 570 661 , 561' stroke='#fff' stroke-width='2' />
+  <path d='M 661 ,563 661 , 563' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 687 , 587 687 , 579' stroke='#fff' stroke-width='2' />
+  <path d='M 687 ,579 687 , 585' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 714 , 600 714 , 565' stroke='#fff' stroke-width='2' />
+  <path d='M 714 ,578 714 , 600' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 740 , 589 740 , 568' stroke='#fff' stroke-width='2' />
+  <path d='M 740 ,589 740 , 585' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 767 , 587 767 , 568' stroke='#fff' stroke-width='2' />
+  <path d='M 767 ,568 767 , 587' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 793 , 600 793 , 587' stroke='#fff' stroke-width='2' />
+  <path d='M 793 ,592 793 , 592' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 820 , 600 820 , 585' stroke='#fff' stroke-width='2' />
+  <path d='M 820 ,585 820 , 589' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 846 , 598 846 , 587' stroke='#fff' stroke-width='2' />
+  <path d='M 846 ,598 846 , 587' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 873 , 589 873 , 579' stroke='#fff' stroke-width='2' />
+  <path d='M 873 ,587 873 , 579' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 899 , 581 899 , 574' stroke='#fff' stroke-width='2' />
+  <path d='M 899 ,581 899 , 574' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 925 , 578 925 , 570' stroke='#fff' stroke-width='2' />
+  <path d='M 925 ,574 925 , 572' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 952 , 600 952 , 559' stroke='#fff' stroke-width='2' />
+  <path d='M 952 ,578 952 , 596' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 978 , 624 978 , 596' stroke='#fff' stroke-width='2' />
+  <path d='M 978 ,596 978 , 615' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 1005 , 615 1005 , 581' stroke='#fff' stroke-width='2' />
+  <path d='M 1005 ,607 1005 , 602' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 1031 , 605 1031 , 592' stroke='#fff' stroke-width='2' />
+  <path d='M 1031 ,598 1031 , 600' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 1058 , 603 1058 , 592' stroke='#fff' stroke-width='2' />
+  <path d='M 1058 ,602 1058 , 596' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 1084 , 596 1084 , 591' stroke='#fff' stroke-width='2' />
+  <path d='M 1084 ,596 1084 , 596' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 1111 , 618 1111 , 589' stroke='#fff' stroke-width='2' />
+  <path d='M 1111 ,602 1111 , 618' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 1137 , 618 1137 , 605' stroke='#fff' stroke-width='2' />
+  <path d='M 1137 ,615 1137 , 611' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 1164 , 609 1164 , 587' stroke='#fff' stroke-width='2' />
+  <path d='M 1164 ,609 1164 , 594' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 1190 , 603 1190 , 592' stroke='#fff' stroke-width='2' />
+  <path d='M 1190 ,602 1190 , 598' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 1216 , 600 1216 , 585' stroke='#fff' stroke-width='2' />
+  <path d='M 1216 ,598 1216 , 587' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 1243 , 598 1243 , 581' stroke='#fff' stroke-width='2' />
+  <path d='M 1243 ,583 1243 , 594' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 1269 , 723 1269 , 550' stroke='#fff' stroke-width='2' />
+  <path d='M 1269 ,578 1269 , 602' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 1296 , 615 1296 , 583' stroke='#fff' stroke-width='2' />
+  <path d='M 1296 ,605 1296 , 594' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 1322 , 596 1322 , 585' stroke='#fff' stroke-width='2' />
+  <path d='M 1322 ,594 1322 , 596' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 1349 , 605 1349 , 585' stroke='#fff' stroke-width='2' />
+  <path d='M 1349 ,591 1349 , 596' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 1375 , 605 1375 , 576' stroke='#fff' stroke-width='2' />
+  <path d='M 1375 ,591 1375 , 600' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 1402 , 605 1402 , 579' stroke='#fff' stroke-width='2' />
+  <path d='M 1402 ,598 1402 , 605' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 1428 , 605 1428 , 476' stroke='#fff' stroke-width='2' />
+  <path d='M 1428 ,594 1428 , 494' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 1455 , 565 1455 , 491' stroke='#fff' stroke-width='2' />
+  <path d='M 1455 ,496 1455 , 498' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 1481 , 531 1481 , 478' stroke='#fff' stroke-width='2' />
+  <path d='M 1481 ,500 1481 , 485' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 1507 , 500 1507 , 384' stroke='#fff' stroke-width='2' />
+  <path d='M 1507 ,485 1507 , 391' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 1534 , 439 1534 , 386' stroke='#fff' stroke-width='2' />
+  <path d='M 1534 ,391 1534 , 421' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 1560 , 421 1560 , 387' stroke='#fff' stroke-width='2' />
+  <path d='M 1560 ,421 1560 , 402' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 1587 , 424 1587 , 391' stroke='#fff' stroke-width='2' />
+  <path d='M 1587 ,408 1587 , 419' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 1613 , 465 1613 , 402' stroke='#fff' stroke-width='2' />
+  <path d='M 1613 ,421 1613 , 415' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 1640 , 458 1640 , 421' stroke='#fff' stroke-width='2' />
+  <path d='M 1640 ,421 1640 , 439' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 1666 , 434 1666 , 70' stroke='#fff' stroke-width='2' />
+  <path d='M 1666 ,393 1666 , 91' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 1693 , 222 1693 , 72' stroke='#fff' stroke-width='2' />
+  <path d='M 1693 ,92 1693 , 191' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 1719 , 234 1719 , 11' stroke='#fff' stroke-width='2' />
+  <path d='M 1719 ,188 1719 , 64' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 1746 , 204 1746 , 0' stroke='#fff' stroke-width='2' />
+  <path d='M 1746 ,60 1746 , 155' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 1772 , 177 1772 , 96' stroke='#fff' stroke-width='2' />
+  <path d='M 1772 ,154 1772 , 136' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 1798 , 192 1798 , 88' stroke='#fff' stroke-width='2' />
+  <path d='M 1798 ,136 1798 , 96' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 1825 , 286 1825 , 97' stroke='#fff' stroke-width='2' />
+  <path d='M 1825 ,97 1825 , 270' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 1851 , 318 1851 , 219' stroke='#fff' stroke-width='2' />
+  <path d='M 1851 ,269 1851 , 260' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 1878 , 319 1878 , 193' stroke='#fff' stroke-width='2' />
+  <path d='M 1878 ,258 1878 , 314' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 1904 , 373 1904 , 299' stroke='#fff' stroke-width='2' />
+  <path d='M 1904 ,319 1904 , 310' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 1931 , 404 1931 , 312' stroke='#fff' stroke-width='2' />
+  <path d='M 1931 ,312 1931 , 377' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 1957 , 380 1957 , 326' stroke='#fff' stroke-width='2' />
+  <path d='M 1957 ,380 1957 , 332' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 1984 , 384 1984 , 256' stroke='#fff' stroke-width='2' />
+  <path d='M 1984 ,336 1984 , 260' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 2010 , 291 2010 , 229' stroke='#fff' stroke-width='2' />
+  <path d='M 2010 ,256 2010 , 266' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 2037 , 312 2037 , 221' stroke='#fff' stroke-width='2' />
+  <path d='M 2037 ,265 2037 , 236' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 2063 , 265 2063 , 199' stroke='#fff' stroke-width='2' />
+  <path d='M 2063 ,239 2063 , 236' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 2089 , 234 2089 , 125' stroke='#fff' stroke-width='2' />
+  <path d='M 2089 ,234 2089 , 127' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 2116 , 169 2116 , 127' stroke='#fff' stroke-width='2' />
+  <path d='M 2116 ,127 2116 , 140' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 2142 , 210 2142 , 134' stroke='#fff' stroke-width='2' />
+  <path d='M 2142 ,142 2142 , 205' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 2169 , 241 2169 , 131' stroke='#fff' stroke-width='2' />
+  <path d='M 2169 ,205 2169 , 138' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 2195 , 140 2195 , 68' stroke='#fff' stroke-width='2' />
+  <path d='M 2195 ,135 2195 , 110' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 2222 , 121 2222 , 70' stroke='#fff' stroke-width='2' />
+  <path d='M 2222 ,107 2222 , 96' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 2248 , 151 2248 , 81' stroke='#fff' stroke-width='2' />
+  <path d='M 2248 ,96 2248 , 97' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 2275 , 132 2275 , 57' stroke='#fff' stroke-width='2' />
+  <path d='M 2275 ,96 2275 , 64' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 2301 , 90 2301 , 5' stroke='#fff' stroke-width='2' />
+  <path d='M 2301 ,62 2301 , 12' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 2328 , 92 2328 , 11' stroke='#fff' stroke-width='2' />
+  <path d='M 2328 ,11 2328 , 68' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 2354 , 79 2354 , 29' stroke='#fff' stroke-width='2' />
+  <path d='M 2354 ,68 2354 , 69' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 2380 , 79 2380 , -5' stroke='#fff' stroke-width='2' />
+  <path d='M 2380 ,68 2380 , 12' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 2407 , 27 2407 , -44' stroke='#fff' stroke-width='2' />
+  <path d='M 2407 ,11 2407 , 0' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 2433 , 86 2433 , -16' stroke='#fff' stroke-width='2' />
+  <path d='M 2433 ,1 2433 , 84' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 2460 , 123 2460 , 70' stroke='#fff' stroke-width='2' />
+  <path d='M 2460 ,83 2460 , 112' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 2486 , 156 2486 , 108' stroke='#fff' stroke-width='2' />
+  <path d='M 2486 ,112 2486 , 147' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 2513 , 216 2513 , 131' stroke='#fff' stroke-width='2' />
+  <path d='M 2513 ,151 2513 , 195' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 2539 , 221 2539 , 173' stroke='#fff' stroke-width='2' />
+  <path d='M 2539 ,197 2539 , 184' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 2566 , 206 2566 , 153' stroke='#fff' stroke-width='2' />
+  <path d='M 2566 ,184 2566 , 160' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 2592 , 171 2592 , 120' stroke='#fff' stroke-width='2' />
+  <path d='M 2592 ,162 2592 , 155' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 2619 , 205 2619 , 150' stroke='#fff' stroke-width='2' />
+  <path d='M 2619 ,154 2619 , 181' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 2645 , 181 2645 , 131' stroke='#fff' stroke-width='2' />
+  <path d='M 2645 ,179 2645 , 132' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 2671 , 153 2671 , 118' stroke='#fff' stroke-width='2' />
+  <path d='M 2671 ,131 2671 , 120' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 2698 , 156 2698 , 99' stroke='#fff' stroke-width='2' />
+  <path d='M 2698 ,121 2698 , 100' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 2724 , 144 2724 , 79' stroke='#fff' stroke-width='2' />
+  <path d='M 2724 ,99 2724 , 125' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 2751 , 160 2751 , 97' stroke='#fff' stroke-width='2' />
+  <path d='M 2751 ,126 2751 , 155' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 2777 , 217 2777 , 157' stroke='#fff' stroke-width='2' />
+  <path d='M 2777 ,158 2777 , 212' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 2804 , 212 2804 , 136' stroke='#fff' stroke-width='2' />
+  <path d='M 2804 ,212 2804 , 158' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 2830 , 171 2830 , 125' stroke='#fff' stroke-width='2' />
+  <path d='M 2830 ,156 2830 , 138' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 2857 , 188 2857 , 130' stroke='#fff' stroke-width='2' />
+  <path d='M 2857 ,138 2857 , 181' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 2883 , 210 2883 , 170' stroke='#fff' stroke-width='2' />
+  <path d='M 2883 ,183 2883 , 181' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 2910 , 271 2910 , 182' stroke='#fff' stroke-width='2' />
+  <path d='M 2910 ,182 2910 , 262' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 2936 , 277 2936 , 241' stroke='#fff' stroke-width='2' />
+  <path d='M 2936 ,262 2936 , 262' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 2962 , 262 2962 , 219' stroke='#fff' stroke-width='2' />
+  <path d='M 2962 ,260 2962 , 254' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 2989 , 264 2989 , 181' stroke='#fff' stroke-width='2' />
+  <path d='M 2989 ,253 2989 , 196' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 3015 , 208 3015 , 169' stroke='#fff' stroke-width='2' />
+  <path d='M 3015 ,194 3015 , 188' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 3042 , 206 3042 , 173' stroke='#fff' stroke-width='2' />
+  <path d='M 3042 ,186 3042 , 196' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 3068 , 230 3068 , 168' stroke='#fff' stroke-width='2' />
+  <path d='M 3068 ,195 3068 , 227' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 3095 , 264 3095 , 212' stroke='#fff' stroke-width='2' />
+  <path d='M 3095 ,227 3095 , 245' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 3121 , 275 3121 , 217' stroke='#fff' stroke-width='2' />
+  <path d='M 3121 ,246 3121 , 221' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 3148 , 230 3148 , 205' stroke='#fff' stroke-width='2' />
+  <path d='M 3148 ,221 3148 , 227' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 3174 , 253 3174 , 206' stroke='#fff' stroke-width='2' />
+  <path d='M 3174 ,229 3174 , 238' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 3201 , 241 3201 , 210' stroke='#fff' stroke-width='2' />
+  <path d='M 3201 ,241 3201 , 230' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 3227 , 258 3227 , 220' stroke='#fff' stroke-width='2' />
+  <path d='M 3227 ,227 3227 , 237' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 3253 , 286 3253 , 234' stroke='#fff' stroke-width='2' />
+  <path d='M 3253 ,235 3253 , 240' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 3280 , 256 3280 , 199' stroke='#fff' stroke-width='2' />
+  <path d='M 3280 ,238 3280 , 247' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 3306 , 256 3306 , 219' stroke='#fff' stroke-width='2' />
+  <path d='M 3306 ,249 3306 , 227' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 3333 , 238 3333 , 219' stroke='#fff' stroke-width='2' />
+  <path d='M 3333 ,226 3333 , 233' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 3359 , 251 3359 , 225' stroke='#fff' stroke-width='2' />
+  <path d='M 3359 ,236 3359 , 237' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 3386 , 271 3386 , 239' stroke='#fff' stroke-width='2' />
+  <path d='M 3386 ,240 3386 , 252' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 3412 , 253 3412 , 201' stroke='#fff' stroke-width='2' />
+  <path d='M 3412 ,250 3412 , 214' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 3439 , 219 3439 , 138' stroke='#fff' stroke-width='2' />
+  <path d='M 3439 ,212 3439 , 144' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 3465 , 149 3465 , 127' stroke='#fff' stroke-width='2' />
+  <path d='M 3465 ,144 3465 , 134' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 3492 , 186 3492 , 125' stroke='#fff' stroke-width='2' />
+  <path d='M 3492 ,132 3492 , 182' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 3518 , 193 3518 , 151' stroke='#fff' stroke-width='2' />
+  <path d='M 3518 ,184 3518 , 180' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 3544 , 202 3544 , 175' stroke='#fff' stroke-width='2' />
+  <path d='M 3544 ,179 3544 , 195' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 3571 , 216 3571 , 182' stroke='#fff' stroke-width='2' />
+  <path d='M 3571 ,193 3571 , 208' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 3597 , 226 3597 , 160' stroke='#fff' stroke-width='2' />
+  <path d='M 3597 ,210 3597 , 169' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 3624 , 188 3624 , 151' stroke='#fff' stroke-width='2' />
+  <path d='M 3624 ,168 3624 , 178' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 3650 , 184 3650 , 153' stroke='#fff' stroke-width='2' />
+  <path d='M 3650 ,179 3650 , 158' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 3677 , 190 3677 , 136' stroke='#fff' stroke-width='2' />
+  <path d='M 3677 ,151 3677 , 170' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 3703 , 169 3703 , 118' stroke='#fff' stroke-width='2' />
+  <path d='M 3703 ,169 3703 , 158' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 3730 , 168 3730 , 136' stroke='#fff' stroke-width='2' />
+  <path d='M 3730 ,156 3730 , 158' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 3756 , 158 3756 , 138' stroke='#fff' stroke-width='2' />
+  <path d='M 3756 ,156 3756 , 151' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 3783 , 156 3783 , 145' stroke='#fff' stroke-width='2' />
+  <path d='M 3783 ,149 3783 , 155' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 3809 , 160 3809 , 155' stroke='#fff' stroke-width='2' />
+  <path d='M 3809 ,156 3809 , 156' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 3835 , 155 3835 , 134' stroke='#fff' stroke-width='2' />
+  <path d='M 3835 ,155 3835 , 149' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 3862 , 149 3862 , 125' stroke='#fff' stroke-width='2' />
+  <path d='M 3862 ,145 3862 , 125' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 3888 , 132 3888 , 107' stroke='#fff' stroke-width='2' />
+  <path d='M 3888 ,123 3888 , 121' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 3915 , 121 3915 , 109' stroke='#fff' stroke-width='2' />
+  <path d='M 3915 ,120 3915 , 118' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 3941 , 134 3941 , 116' stroke='#fff' stroke-width='2' />
+  <path d='M 3941 ,116 3941 , 125' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 3968 , 142 3968 , 116' stroke='#fff' stroke-width='2' />
+  <path d='M 3968 ,123 3968 , 140' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 3994 , 156 3994 , 129' stroke='#fff' stroke-width='2' />
+  <path d='M 3994 ,129 3994 , 134' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 4021 , 134 4021 , 121' stroke='#fff' stroke-width='2' />
+  <path d='M 4021 ,134 4021 , 123' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 4047 , 845 4047 , 121' stroke='#fff' stroke-width='2' />
+  <path d='M 4047 ,156 4047 , 134' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 4074 , 142 4074 , 134' stroke='#fff' stroke-width='2' />
+  <path d='M 4074 ,134 4074 , 138' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 4100 , 217 4100 , 121' stroke='#fff' stroke-width='2' />
+  <path d='M 4100 ,138 4100 , 134' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 4126 , 295 4126 , 131' stroke='#fff' stroke-width='2' />
+  <path d='M 4126 ,138 4126 , 134' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 4153 , 136 4153 , 127' stroke='#fff' stroke-width='2' />
+  <path d='M 4153 ,136 4153 , 129' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 4179 , 136 4179 , 127' stroke='#fff' stroke-width='2' />
+  <path d='M 4179 ,131 4179 , 136' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 4206 , 138 4206 , 125' stroke='#fff' stroke-width='2' />
+  <path d='M 4206 ,127 4206 , 138' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 4232 , 138 4232 , 125' stroke='#fff' stroke-width='2' />
+  <path d='M 4232 ,132 4232 , 134' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 4259 , 142 4259 , 127' stroke='#fff' stroke-width='2' />
+  <path d='M 4259 ,140 4259 , 138' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 4285 , 142 4285 , 129' stroke='#fff' stroke-width='2' />
+  <path d='M 4285 ,134 4285 , 137' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 4312 , 142 4312 , 131' stroke='#fff' stroke-width='2' />
+  <path d='M 4312 ,137 4312 , 138' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 4338 , 142 4338 , 131' stroke='#fff' stroke-width='2' />
+  <path d='M 4338 ,142 4338 , 140' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 4365 , 140 4365 , 129' stroke='#fff' stroke-width='2' />
+  <path d='M 4365 ,137 4365 , 134' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 4391 , 142 4391 , 127' stroke='#fff' stroke-width='2' />
+  <path d='M 4391 ,140 4391 , 134' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 4417 , 142 4417 , 131' stroke='#fff' stroke-width='2' />
+  <path d='M 4417 ,131 4417 , 136' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 4444 , 142 4444 , 131' stroke='#fff' stroke-width='2' />
+  <path d='M 4444 ,142 4444 , 140' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 4470 , 140 4470 , 127' stroke='#fff' stroke-width='2' />
+  <path d='M 4470 ,138 4470 , 134' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 4497 , 134 4497 , 127' stroke='#fff' stroke-width='2' />
+  <path d='M 4497 ,134 4497 , 132' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 4523 , 138 4523 , 129' stroke='#fff' stroke-width='2' />
+  <path d='M 4523 ,134 4523 , 136' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 4550 , 138 4550 , 134' stroke='#fff' stroke-width='2' />
+  <path d='M 4550 ,136 4550 , 138' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 4576 , 140 4576 , 134' stroke='#fff' stroke-width='2' />
+  <path d='M 4576 ,140 4576 , 140' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 4603 , 140 4603 , 134' stroke='#fff' stroke-width='2' />
+  <path d='M 4603 ,140 4603 , 137' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 4629 , 140 4629 , 134' stroke='#fff' stroke-width='2' />
+  <path d='M 4629 ,134 4629 , 134' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 4656 , 140 4656 , 134' stroke='#fff' stroke-width='2' />
+  <path d='M 4656 ,138 4656 , 136' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 4682 , 138 4682 , 125' stroke='#fff' stroke-width='2' />
+  <path d='M 4682 ,134 4682 , 129' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 4708 , 131 4708 , 125' stroke='#fff' stroke-width='2' />
+  <path d='M 4708 ,125 4708 , 128' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 4735 , 134 4735 , 125' stroke='#fff' stroke-width='2' />
+  <path d='M 4735 ,129 4735 , 129' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 4761 , 132 4761 , 125' stroke='#fff' stroke-width='2' />
+  <path d='M 4761 ,132 4761 , 129' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 4788 , 144 4788 , 127' stroke='#fff' stroke-width='2' />
+  <path d='M 4788 ,132 4788 , 140' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 4814 , 144 4814 , 129' stroke='#fff' stroke-width='2' />
+  <path d='M 4814 ,129 4814 , 134' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 4841 , 136 4841 , 127' stroke='#fff' stroke-width='2' />
+  <path d='M 4841 ,136 4841 , 129' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 4867 , 134 4867 , 129' stroke='#fff' stroke-width='2' />
+  <path d='M 4867 ,131 4867 , 129' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+  <path d='M 4894 , 136 4894 , 129' stroke='#fff' stroke-width='2' />
+  <path d='M 4894 ,129 4894 , 129' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 4920 , 129 4920 , 114' stroke='#fff' stroke-width='2' />
+  <path d='M 4920 ,129 4920 , 114' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 4947 , 120 4947 , 110' stroke='#fff' stroke-width='2' />
+  <path d='M 4947 ,114 4947 , 112' stroke='#f00'
+    stroke-width='13.227513227513228' />
+  <path d='M 4973 , 125 4973 , 92' stroke='#fff' stroke-width='2' />
+  <path d='M 4973 ,114 4973 , 92' stroke='#0f0'
+    stroke-width='13.227513227513228' />
+</svg>

@@ -1,0 +1,36 @@
+{
+  "html.format.wrapLineLength": 80,
+  "editor.wordWrap": "on",
+  "editor.tabSize": 2,
+  "editor.bracketPairColorization.enabled": true,
+  "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+  "editor.fontLigatures": true,
+  "editor.detectIndentation": true,
+  "editor.fontVariations": false,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.colorCustomizations": {
+
+    "activityBar.background": "#111",
+    "titleBar.activeBackground": "#000",
+    "titleBar.activeForeground": "#fff",
+    "icon.foreground": "#fff",
+    "symbolIcon.colorForeground": "#fff",
+    "icon.colorForeground": "#ffff00",
+    "activityBar.inactiveForeground": "#524747",
+    "tab.activeBorderTop": "#ffff00",
+    "audioCues.chatResponsePending": "on",
+    "tab.activeBackground": "#ff0000",
+    "tab.inactiveForeground": "#ffff00",
+    "tab.activeForeground": "#000",
+    "activityBar.activeBackground": "#0f0",
+    "activityBar.foreground": "#888",
+    "[Monokai]": {
+        "sideBar.background": "#000",
+        "editor.background": "#000",
+        "editorLineNumber.foreground": "#888"
+        
+    }
+}
+}
